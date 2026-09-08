@@ -37,7 +37,7 @@ Dùng tốc độ TTS thật đã đo của kênh (xem mốc đã ghi ở `QuyTr
 ```
 - **STT**: đánh số liên tục từ 001 (3 chữ số, vì có thể >99 scene), đúng thứ tự xuất hiện trong voice-script, không đảo.
 - **Bối cảnh/setup**: địa điểm/đạo cụ cố định cho cụm scene liên tiếp cùng bối cảnh (xem `QuyTrinh/C3-Prompt-Anh.md` về nguyên tắc đa dạng bối cảnh giữa các cụm khác nhau).
-- **Mô tả ý chính**: tóm tắt ngắn hành động/chủ thể/cảm xúc của scene đó — đây là căn cứ trực tiếp để C3 viết prompt chi tiết, KHÔNG cần viết sẵn prompt ở bước này.
+- **Mô tả ý chính**: tóm tắt ngắn hành động/chủ thể/cảm xúc của scene đó — đây là căn cứ trực tiếp để C3 viết prompt chi tiết, KHÔNG cần viết sẵn prompt ở bước này. Tất cả scene đều là **1 ảnh AI gen thuần tuý trong 1 phong cách nhất quán** (theo `docs/Visual-Prompts-goc.md` mục 2 — bgStyle chỉ khác nhau ở loại nền phẳng minh hoạ hay nền phong-cách-ảnh-thật, không tách lớp/ghép ảnh thật ngoài đời).
 
 ## Đầu ra
 `scene-list.md` trong `Bai-Dang/Tap N - [tên]/` — đưa người dùng xem lại trước khi qua C3 (viết prompt ảnh).

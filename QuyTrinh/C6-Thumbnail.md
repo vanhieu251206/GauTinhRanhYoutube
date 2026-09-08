@@ -5,18 +5,18 @@
 > Nhắc lại theo `docs/cach-lam-chuan.md` mục 0: Tiêu đề + Thumbnail quan trọng hơn nội dung trong việc quyết định video có được đề xuất hay không — không sa đà làm sơ sài bước này.
 
 ## Bước 1 — Chọn khoảnh khắc/biểu cảm của Gấu làm nền
-Gấu **luôn xuất hiện** trong thumbnail (`docs/Channel-DNA-goc.md` mục 7 — "KHÔNG BAO GIỜ bỏ"). Chọn 1 biểu cảm/tư thế đắt giá nhất khớp đúng con số/nghịch lý chính của tập, ưu tiên 1 trong các biểu cảm chuẩn ở `docs/Visual-Prompts-goc.md` mục 1: nheo mắt tính toán, cười khẩy, dò xét qua kính, chỉ tay, khoanh tay tự tin. Đối chiếu bảng "Biểu cảm chủ đạo" ở `docs/Channel-DNA-goc.md` mục 6 (nheo mắt tính toán, cười khẩy — khác hẳn ngạc nhiên/lo lắng của kênh reference).
+Gấu **luôn xuất hiện** trong thumbnail (`docs/Channel-DNA-goc.md` mục 7 — "KHÔNG BAO GIỜ bỏ"). Cần 1 biểu cảm/tư thế đắt giá nhất khớp đúng con số/nghịch lý chính của tập. Danh sách biểu cảm ở `docs/Visual-Prompts-goc.md` mục 1 (nheo mắt tính toán, cười khẩy, dò xét qua kính, chỉ tay, khoanh tay tự tin) là kho tham khảo có sẵn, không bắt buộc — dùng đúng 5 biểu cảm này xoay vòng qua nhiều tập dễ khiến lưới thumbnail của kênh nhìn lặp. **Hỏi người dùng mỗi lần tới bước này**: chọn 1 biểu cảm có sẵn, hay nghĩ tư thế/biểu cảm mới phù hợp hơn với tập này.
 
 Không lấy đại 1 phương án duy nhất — thử ít nhất 2-3 biểu cảm khác nhau cho cùng 1 khoảnh khắc rồi chọn bản "có hồn" nhất.
 
 ## Bước 2 — Viết chữ thumbnail
-Lấy trực tiếp hoặc biến tấu nhẹ từ Thumbnail Text Bank ở `docs/Style-Guide-goc.md` mục 6 (4 nhóm: Question / Statement / Number / Emotion) — chọn nhóm khớp đúng góc kể của tập (VD nhóm Number nếu tập nhấn vào 1 con số cụ thể như điểm hoà vốn).
+Thumbnail Text Bank ở `docs/Style-Guide-goc.md` mục 6 (4 nhóm: Question / Statement / Number / Emotion) là kho mẫu có sẵn, không bắt buộc — **hỏi người dùng mỗi lần tới bước này**: dùng nguyên văn/biến tấu 1 câu từ Text Bank, hay tự viết chữ mới cho tập này (để tránh nhiều tập dùng trùng cụm chữ).
 - **Tối đa 4-5 từ, không quá 2 dòng** (đúng quy tắc `docs/Style-Guide-goc.md` mục 6).
 - Giọng mỉa mai/cảm thán đúng tinh thần Gấu, không phải câu tóm tắt nội dung — thumbnail chỉ cần gây tò mò, tiêu đề video mới giải thích rõ.
 - Đề xuất 2-3 phương án chữ, đưa người dùng chọn/chỉnh trước khi viết prompt.
 
 ## Bước 3 — Viết prompt thumbnail
-Dùng lại **charStyle cố định của Gấu** ở `QuyTrinh/C3-Prompt-Anh.md` (không đổi trang phục/kính — khác với kênh chị em `TruyenTuDuy`, Gấu không hoá trang theo câu chuyện, luôn giữ đúng 1 bộ nhận diện vest xanh navy + kính lão vàng đồng). Ghép prompt theo khuôn sau:
+Dùng lại **charStyle cố định của Gấu** ở `QuyTrinh/C3-Prompt-Anh.md` — mặc định giữ đúng 1 bộ nhận diện vest xanh navy + kính lão vàng đồng. Nếu tập này có dùng ảnh tham chiếu hoá trang riêng (xem C3), thumbnail nên ưu tiên vẫn dùng bộ vest gốc để giữ nhận diện kênh nhất quán trên trang chủ/lưới video, trừ khi bộ hoá trang đó chính là điểm nhấn hài hước cần lên thumbnail. Ghép prompt theo khuôn sau:
 
 1. **Mở đầu cố định + shot**: `Cartoonish illustrative thumbnail, [shot type] focusing on the Gấu bear mascot character` + dán nguyên văn charStyle cố định (`QuyTrinh/C3-Prompt-Anh.md` Bước 2). Chọn `[shot type]`: medium close-up (đa số) hoặc wide shot (khi cần thấy trọn bối cảnh ngành).
 2. **Bối cảnh nền** — 1 trong 2 dạng theo `docs/Visual-Prompts-goc.md` mục 2 (bgStyle): nền phẳng minh hoạ (biểu đồ, mô hình kinh doanh) hoặc nền ảnh thật liên quan ngành nghề của tập (mờ nhẹ để Gấu nổi bật), luôn đẩy hẳn về không gian Việt Nam nếu là ảnh thật.

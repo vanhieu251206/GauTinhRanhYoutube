@@ -35,6 +35,8 @@
 5. Ví von khái niệm tài chính khô khan bằng hình ảnh đời thường
 6. Kết mỗi luận điểm bằng một câu chốt ngắn, dễ nhớ
 7. Giữ giọng mỉa mai nhẹ khi nói về "ảo tưởng làm giàu"
+8. Có thể mở hook bằng 1 giai thoại/tình huống cá nhân ngắn (VD "Tôi có ông anh họ...") để dẫn vào nghịch lý, miễn là vẫn chạm số liệu/nghịch lý chính trong 15 giây đầu
+9. Với video dài/nhiều lớp phân tích, có thể chèn 1 câu mời thích + đăng ký ngắn gọn ở khoảng giữa video (mid-roll CTA), không chỉ ở cuối
 
 **DON'T:**
 1. Không dùng thuật ngữ tài chính mà không giải thích ngay sau đó
@@ -86,8 +88,11 @@ TUYỆT ĐỐI KHÔNG: Đưa lời khuyên đầu tư trực tiếp, dùng thu�
 - **Script format:** viết liền mạch dạng văn nói, không chia bullet trong kịch bản đọc (bullet chỉ dùng cho tài liệu nội bộ)
 - **Emphasis/pause markers:** dùng dấu `...` để đánh dấu chỗ ngừng tạo kịch tính; **in đậm** các con số quan trọng khi soạn kịch bản để editor dễ nhấn nhá khi lồng tiếng
 - **Naming convention file kịch bản:** `SCRIPT_[SốThứTự]_[TênChủĐề_KhôngDấu].md` — ví dụ: `SCRIPT_01_QuanTraSua.md`
+- **Độ dài tối thiểu `voice-script.txt`:** ≥ 8.000 ký tự (đếm ký tự Unicode thực tế, không phải số từ) — chuẩn chốt từ Tập 1 (Trà Sữa, 7.260 ký tự, làm tròn lên hàng nghìn). Đếm bằng Python `len(open(file, encoding='utf-8').read())` để chính xác, tránh dùng `wc -m` (dễ đếm sai byte thay vì ký tự Unicode trên môi trường Windows).
 
 ## 6. THUMBNAIL TEXT BANK
+
+**Đây là kho mẫu tham khảo có sẵn, không bắt buộc dùng liên tục** — lấy nguyên văn cùng 1 cụm cho nhiều tập khác nhau dễ khiến thumbnail nghe lặp/nhàm dù ngành nghề khác nhau. Xem cách hỏi người dùng ở `QuyTrinh/C6-Thumbnail.md` Bước 2.
 
 #### Category: Question
 1. "Lãi thật không?"

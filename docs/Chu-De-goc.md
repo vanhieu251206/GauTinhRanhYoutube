@@ -90,17 +90,17 @@ LƯU Ý: Title phải tuân thủ Voice Rules từ Style Guide.
 | Thứ tự | Topic | Lý do |
 |---|---|---|
 | 1 | Trà sữa (#1) | Đề tài phổ biến nhất với giới trẻ, dễ viral, giới thiệu nhân vật Gấu lần đầu |
-| 2 | Lương 10tr vay mua nhà (#12) | Nối mạch quen thuộc "lương X mua Y" đã chứng minh hiệu quả ở kênh gốc |
+| 2 | Lương 10tr vay mua nhà (#12) | Nối mạch quen thuộc "lương X mua Y" dễ tạo đồng cảm với người xem |
 | 3 | Phòng gym (#6) | Nghịch lý mạnh ("đông càng ế"), dễ tạo tranh luận trong comment |
 | 4 | Xe công nghệ (#18) | Đối tượng khán giả rộng, ai cũng từng đi hoặc từng chạy |
 | 5 | Bảo hiểm nhân thọ (#16) | Chủ đề gây tranh cãi cao, tăng tương tác mạnh sau khi đã có 4 video nền tảng |
 | 6 | Xe đẩy bán đồ ăn vặt (#3) | Vốn siêu nhỏ, dễ đồng cảm với người xem phổ thông |
-| 7 | Chuỗi cầm đồ online (#15) | Mở rộng góc nhìn công nghệ, tạo khác biệt với kênh gốc |
+| 7 | Chuỗi cầm đồ online (#15) | Mở rộng góc nhìn công nghệ, đa dạng hoá chủ đề |
 | 8 | Bỏ tiền mặt (#22) | Video vĩ mô đầu tiên, đóng vai trò đa dạng hoá nội dung sau chuỗi 7 video vi mô |
 
 ## 5. TOPIC SCORING (5 tiêu chí, thang 1-10, tổng /50)
 
-| Topic | Độ hot | Dễ làm | Khác biệt vs Ếch | View tiềm năng | Ít rủi ro pháp lý | Tổng /50 | Xếp hạng |
+| Topic | Độ hot | Dễ làm | Góc kể riêng | View tiềm năng | Ít rủi ro pháp lý | Tổng /50 | Xếp hạng |
 |---|---|---|---|---|---|---|---|
 | Trà sữa | 9 | 8 | 7 | 9 | 10 | 43 | 1 |
 | Vay mua nhà | 8 | 7 | 8 | 8 | 8 | 39 | 2 |
@@ -117,4 +117,4 @@ LƯU Ý: Title phải tuân thủ Voice Rules từ Style Guide.
 
 ## 6. CROSS RESEARCH MAP
 
-Không áp dụng — hiện chỉ có một kênh reference duy nhất ("Ếch Biết Tuốt"). Nếu sau này bổ sung thêm kênh tham chiếu khác, mục này sẽ so sánh chồng lấn chủ đề để tránh trùng lặp.
+Không áp dụng hiện tại. Nếu sau này mở rộng thêm kênh/nhánh nội dung khác, mục này sẽ so sánh chồng lấn chủ đề để tránh trùng lặp.

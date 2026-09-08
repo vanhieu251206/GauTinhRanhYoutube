@@ -13,7 +13,7 @@ Nếu đã dùng hết 8 topic launch sequence, chọn tiếp trong "Topic còn 
 Trước khi qua outlier detection, chủ động tra xem có hiện tượng/trend tài chính-kinh doanh nào đang thật sự được bàn tán gần đây (mạng xã hội, thời sự đời sống VN) có thể gắn được vào 1 topic sẵn có không (dùng WebSearch nếu cần). Nếu tìm được 1 trend thật khớp, ưu tiên đẩy topic đó lên làm trước; nếu không tìm được gì thật sự khớp, bỏ qua bước này, không ép tìm cho có.
 
 ## Bước 2 — Outlier detection (soi đối thủ)
-Người dùng thao tác trực tiếp trên vidIQ free (Claude không có quyền truy cập công cụ này) — Claude đưa ra **từ khoá/kênh cụ thể cần tra** mỗi lần làm C0 (ưu tiên kênh reference "Ếch Biết Tuốt" và các kênh phân tích tài chính/kinh doanh khác), người dùng tra trên vidIQ rồi báo lại số liệu để Claude đối chiếu và quyết định tiếp.
+Người dùng thao tác trực tiếp trên vidIQ free (Claude không có quyền truy cập công cụ này) — Claude đưa ra **từ khoá/kênh cụ thể cần tra** mỗi lần làm C0 (ưu tiên các kênh phân tích tài chính/kinh doanh đang lên), người dùng tra trên vidIQ rồi báo lại số liệu để Claude đối chiếu và quyết định tiếp.
 Tiêu chí: video nào có tỷ lệ view/subscriber > 20-30 lần là tín hiệu chủ đề/góc kể đang "bắt trend" thật. Ghi lại chủ đề, tiêu đề, thumbnail của video đó làm tín hiệu tham khảo — **không sao chép số liệu/kịch bản**, chỉ tham khảo góc kể/ngành nghề đang được quan tâm.
 
 ## Bước 2.5 — Kiểm tra ý tưởng trước khi chốt
@@ -33,7 +33,7 @@ Chốt 1 ý tưởng đủ dùng cho tập đang làm, theo format:
 Đưa thẳng ý tưởng này sang C1-Script (chỉ ghi vào bảng "Đã dùng" ở `docs/da-dung-de-tai.md` sau khi đã chốt script, theo `QuyTrinh/C1-Script.md` Bước 6, và xoá dòng tương ứng khỏi "Kho ý tưởng chờ sản xuất"). Nếu ý tưởng bị loại ở Bước 2.5, ghi vào mục "Ý tưởng đã xét nhưng loại bỏ" để không research trùng lần sau.
 
 ## Bước 6 — Phác ý tưởng thumbnail sớm (trước khi viết script)
-Trước khi qua C1, nghĩ nhanh: khoảnh khắc/biểu cảm nào của Gấu (nheo mắt tính toán, cười khẩy, dò xét qua kính...) đủ mạnh để làm thumbnail, kết hợp con số/nghịch lý chính của tập. Tham khảo Thumbnail Text Bank ở `docs/Style-Guide-goc.md` mục 6. Đây chỉ là **định hướng ý tưởng**, asset thật làm ở `C6-Thumbnail.md` sau khi có ảnh từ C3.
+Trước khi qua C1, nghĩ nhanh: khoảnh khắc/biểu cảm nào của Gấu đủ mạnh để làm thumbnail, kết hợp con số/nghịch lý chính của tập — có thể lấy từ kho biểu cảm/Text Bank có sẵn (`QuyTrinh/C6-Thumbnail.md` Bước 1-2) hoặc nghĩ biểu cảm/chữ mới, không bắt buộc theo đúng kho cũ. Đây chỉ là **định hướng ý tưởng**, asset thật làm ở `C6-Thumbnail.md` sau khi có ảnh từ C3.
 
 ## Lưu ý an toàn
 Không tư vấn đầu tư trực tiếp, không nêu đích danh doanh nghiệp/cá nhân kèm phán xét tiêu cực, không dùng số liệu bịa — đối chiếu ngay khung an toàn nội dung ở `docs/DNA.md` mục 4 trước khi chốt.

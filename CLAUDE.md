@@ -2,7 +2,7 @@
 
 > File này để Claude đọc đầu tiên mỗi phiên làm việc trong project này.
 > Kênh phân tích **mô hình kiếm tiền/lỗ lãi thật của các ngành nghề/dịch vụ đời thường Việt Nam** (quán trà sữa, tiệm rửa xe, phòng gym, tài xế công nghệ...) và các quyết định tài chính cá nhân phổ biến (vay mua nhà, thẻ tín dụng...) — bóc tách COGS, chi phí cố định, điểm hoà vốn, chi phí ẩn. Giọng kể tinh ranh/mỉa mai nhẹ qua nhân vật mascot **Gấu**. Định dạng: **ảnh tĩnh + voice**, không animation, dựng thành video hoàn chỉnh đăng kênh.
-> Project này nhân bản cấu trúc/quy trình từ kênh chị em `TruyenTuDuy` (giải trí tri thức tâm lý) và `TruyenMaAudio` (truyện ma dân gian), điều chỉnh nội dung cho ngách tài chính/kinh doanh đời thường — 3 project độc lập, không dùng chung git/tài nguyên. Tham khảo trực tiếp art style + cấu trúc video của kênh reference **"Ếch Biết Tuốt"**.
+> Project này là 1 project độc lập, không dùng chung git/tài nguyên với project khác.
 > Chi tiết đầy đủ ở `docs/DNA.md`, `docs/Channel-DNA-goc.md`, `docs/Style-Guide-goc.md`, `docs/Visual-Prompts-goc.md`, `docs/Chu-De-goc.md` (4 file gốc do người dùng chốt).
 
 ## 0. BẮT ĐẦU MỖI PHIÊN (làm trước tiên)
@@ -54,8 +54,12 @@ GauTinhRanh/
 ## 2. Yêu cầu chung
 - Ngôn ngữ làm việc: tiếng Việt.
 - Định dạng: **ảnh tĩnh + voice**, KHÔNG animation — mỗi scene là 1 ảnh AI tĩnh, ghép theo timeline voice.
-- Mỗi tập là 1 ngành nghề/chủ đề tài chính độc lập, không nối tiếp cốt truyện. Nhân vật Gấu là người dẫn chuyện cố định, xuất hiện xuyên suốt (KHÁC kênh chị em `TruyenTuDuy` — Gấu không tuỳ chọn, luôn có mặt).
+- Mỗi tập là 1 ngành nghề/chủ đề tài chính độc lập, không nối tiếp cốt truyện. Nhân vật Gấu là người dẫn chuyện cố định, xuất hiện xuyên suốt — không tuỳ chọn, luôn có mặt.
 - Không tự ý sửa file trong `QuyTrinh/` — chỉ sửa khi người dùng xác nhận đạt và yêu cầu cụ thể.
 - Chống lặp/chồng chéo nội dung giữa `CLAUDE.md` ↔ `docs/DNA.md` ↔ `QuyTrinh/C*.md`: trước khi ghi quy tắc mới, kiểm tra đã có ở chỗ khác chưa; nếu có, sửa vào chỗ cũ hoặc trỏ tham chiếu thay vì chép lại.
 - **Kinh nghiệm/đúc kết phải lưu file cứng trong project (thư mục `docs/`), KHÔNG chỉ lưu ở bộ nhớ Claude trên máy** — bộ nhớ đó nằm ngoài project, không được git backup, hư máy là mất. Mọi kiến thức/chiến lược/bài học người dùng chia sẻ hoặc rút ra trong quá trình làm phải ghi thành file `.md` trong `docs/` rồi commit + push lên GitHub để backup thật sự.
 - **Khung an toàn nội dung bắt buộc** (`docs/DNA.md` mục 4): không tư vấn đầu tư cụ thể, không nêu đích danh doanh nghiệp/cá nhân kèm phán xét tiêu cực, luôn giữ khung "ước tính/tổng hợp cá nhân" cho mọi số liệu, luôn có disclaimer + catchphrase cố định.
+- **Trước khi ghi thêm bất kỳ quy tắc/kỹ thuật mới nào vào project (docs/QuyTrinh), phải tự phân tích nên ghi CỨNG (bắt buộc, đúng thứ tự/vị trí/từ ngữ cố định) hay ghi CỐT LÕI (nguyên tắc/kho kỹ thuật chọn linh hoạt tuỳ tình huống)** — tuỳ vào bản chất nội dung, không mặc định ghi cứng cho tiện:
+  - Ghi CỨNG khi: câu chữ pháp lý/an toàn bắt buộc y nguyên (disclaimer, catchphrase), thứ tự khung sản xuất không đổi (6 bước video, thứ tự C0→C7), nhận diện/tone giọng xuyên suốt không đổi giữa các tập (persona Gấu, giọng tinh ranh mỉa mai, charStyle nhân vật), hoặc quy tắc kỹ thuật có đúng/sai rõ ràng (không tái dùng ảnh cũ, không copy tên thương hiệu thật).
+  - Ghi CỐT LÕI khi: đó là cách **triển khai nội dung cụ thể của từng chủ đề/bài viết** — mỗi tập một ngành nghề khác nhau nên cách dẫn dắt, ví dụ, số liệu, thủ pháp kể chuyện đương nhiên phải khác nhau; nếu ghi cứng thành "bước X luôn làm Y" thì mọi tập sẽ rập khuôn theo đúng 1 motif dễ đoán, rủi ro giống "reused content" bị YouTube phạt (xem `docs/chien-luoc-youtube.md` mục 8). Trường hợp này chỉ ghi thành nguyên tắc/kho lựa chọn, kèm nhắc rõ "chọn linh hoạt, không dùng thành công thức cố định". Tóm gọn: **cái gì là bản sắc/nhận diện cố định của kênh → ghi cứng; cái gì là cách kể 1 câu chuyện cụ thể → ghi cốt lõi**.
+  - Nếu không chắc, hỏi lại người dùng thay vì tự chọn ghi cứng.

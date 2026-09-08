@@ -19,6 +19,11 @@ Mỗi video bóc tách giá vốn, chi phí cố định, điểm hoà vốn và
 Đăng ký kênh để không bỏ lỡ video mới, đăng 2 lần/tuần.
 ```
 
+## Mô tả ngắn (dùng khi cần giới thiệu kênh trong 1-2 câu)
+```
+Gấu Tinh Ranh — bóc mẽ chuyện lời lỗ phía sau quán trà sữa, tiệm rửa xe, phòng gym, anh xe ôm công nghệ... và những cú xuống tiền quen thuộc như vay mua nhà, quẹt thẻ tín dụng. Kể bằng giọng đời thường, hơi tưng tửng, để hiểu tiền chảy đi đâu. Nội dung mang tính chia sẻ kiến thức, không phải lời khuyên đầu tư.
+```
+
 ## Lưu ý nội dung disclaimer (đặt cuối mô tả, bắt buộc theo `docs/DNA.md` mục 5)
 ```
 Thông tin trên kênh là tổng hợp, góp nhặt từ nhiều nguồn, mang tính ước tính/ý kiến cá nhân, không phải tư vấn đầu tư chính thức. Sai chỗ nào mong anh em góp ý ở phần bình luận.

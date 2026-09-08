@@ -28,7 +28,9 @@ Ví dụ:
 
 ## 2. HOOK PATTERNS
 
-Giữ 3 hook type mạnh nhất từ reference: (1) Phản đề nhận thức chung, (2) Số liệu cụ thể gây tò mò, (3) Đặt câu hỏi nghi vấn xã hội.
+3 hook type mạnh: (1) Phản đề nhận thức chung, (2) Số liệu cụ thể gây tò mò, (3) Đặt câu hỏi nghi vấn xã hội.
+
+**Đây là kho mẫu tham khảo có sẵn, không bắt buộc dùng liên tục** — dùng đúng 1 trong 3 mẫu câu dưới nhiều tập liền dễ khiến hook nghe rập khuôn dù đổi ngành nghề. Xem cách hỏi người dùng ở `QuyTrinh/C1-Script.md` Bước 1.5.
 
 Mẫu hook mở đầu (giọng Gấu — láu cá, tỉnh táo):
 
@@ -45,14 +47,16 @@ Mẫu hook mở đầu (giọng Gấu — láu cá, tỉnh táo):
 5. Điểm hoà vốn + chi phí ẩn/cơ hội
 6. Kết luận bài học tài chính + catchphrase
 
-**Transition signature riêng:** thay vì "Bây giờ đến phần đau đầu hơn này..." của kênh gốc, dùng câu nối đặc trưng:
+Đây là khung lõi cố định thứ tự. Cách triển khai chi tiết bên trong (giai thoại mở bài, số liệu theo năm, case study thật, mid-roll CTA, mở rộng rủi ro...) là kho kỹ thuật bổ trợ chọn linh hoạt theo từng tập — xem `QuyTrinh/C1-Script.md` Bước 1.5, không dùng thành công thức rập khuôn giống nhau mọi tập.
+
+**Transition signature riêng:** dùng câu nối đặc trưng:
 > "Giờ mới đến khúc xương khó nhằn đây..."
 
 ## 4. THUMBNAIL STYLE
 
 - Palette: xanh navy (#0C447C) - vàng đồng (#BA7517), khác đỏ-đen của bản gốc
 - Bố cục: mascot Gấu lệch một bên (30-40% khung hình) + nền ảnh thật liên quan chủ đề
-- Typography: font góc cạnh, bold, viền đen — khác font tay-bo của kênh gốc
+- Typography: font góc cạnh, bold, viền đen
 - Text ngắn 3-5 từ, giọng mỉa mai/cảm thán
 
 ## 5. HUMAN TOUCH SIGNALS
@@ -66,20 +70,20 @@ Mẫu hook mở đầu (giọng Gấu — láu cá, tỉnh táo):
 | Signature phrase kết | "Tôi là Gấu. Khôn thì sống, ngu thì mất tiền. Hẹn anh em video sau." |
 | Disclaimer cố định | "Thông tin dưới đây là tôi tổng hợp, góp nhặt từ nhiều nguồn, cũng là ý kiến cá nhân chứ không phải tư vấn đầu tư chính thức. Sai chỗ nào anh em cứ chửi thẳng ở comment cho tôi biết." |
 
-## 6. DIFFERENTIATION vs REFERENCE
+## 6. BẢN SẮC RIÊNG CỦA GẤU TINH RANH
 
-| Yếu tố | Ếch Biết Tuốt (reference) | Gấu Tinh Ranh (kênh mới) |
-|---|---|---|
-| Nhân vật | Ếch mắt lồi, ngây thơ/thật thà | Gấu mắt híp, láu cá/mưu mẹo |
-| Trang phục | Vest đen + hoa hồng đỏ | Vest xanh navy + kính lão/xì gà |
-| Palette thumbnail | Đỏ - đen | Xanh navy - vàng đồng |
-| Personality | Khiêm tốn, mời phản biện | Tỉnh táo, "biết tuốt" nhưng vẫn kể cho anh em nghe |
-| Câu nối chuyển cảnh | "Bây giờ đến phần đau đầu hơn này" | "Giờ mới đến khúc xương khó nhằn đây" |
-| Catchphrase kết | "Tôi là Ếch, đừng quên đăng ký kênh" | "Tôi là Gấu. Khôn thì sống, ngu thì mất tiền" |
+| Yếu tố | Chốt cho Gấu Tinh Ranh |
+|---|---|
+| Nhân vật | Gấu mắt híp, láu cá/mưu mẹo |
+| Trang phục | Vest xanh navy + kính lão/xì gà |
+| Palette thumbnail | Xanh navy - vàng đồng |
+| Personality | Tỉnh táo, "biết tuốt" nhưng vẫn kể cho anh em nghe |
+| Câu nối chuyển cảnh | "Giờ mới đến khúc xương khó nhằn đây" |
+| Catchphrase kết | "Tôi là Gấu. Khôn thì sống, ngu thì mất tiền" |
 
 ## 7. PROTAGONIST IDENTITY (NHÂN VẬT CHÍNH)
 
-- **Hình dáng:** Gấu nâu/đen, dáng mập tròn, mắt híp tinh ranh, nhếch mép cười khẩy
-- **Trang phục:** Vest công sở xanh navy hoặc xám, kính lão gọng tròn (hoặc điếu xì gà nhỏ tùy video)
-- **Hiện diện:** KHÔNG BAO GIỜ bỏ — xuất hiện trong mọi thumbnail và mọi video, mở đầu + kết thúc luôn có mặt
-- **Vai trò narrative:** "Con gấu láu cá nhìn thấu mọi chiêu trò kiếm tiền" — kể chuyện với thái độ tỉnh táo, đôi khi mỉa mai nhẹ, khác hẳn tông "thật thà kể chuyện" của Ếch
+- **Hình dáng:** Gấu nâu/đen, dáng cao gầy đứng thẳng đĩnh đạc như quý ông lịch lãm (không mập tròn, không lùn), mắt híp tinh ranh, nhếch mép cười khẩy
+- **Trang phục:** Mặc định vest công sở xanh navy, kính lão gọng tròn — giữ nguyên xuyên suốt hầu hết mọi tập. **Hoá trang theo bối cảnh câu chuyện là tuỳ chọn sáng tạo** (VD đóng vai nhân viên pha chế, khách hàng...) khi thật sự hợp tình huống của tập, kèm bắt buộc tạo ảnh tham chiếu phụ riêng cho tập đó để đồng bộ (xem `QuyTrinh/C3-Prompt-Anh.md`) — gương mặt/mắt híp/răng vàng luôn giữ nguyên dù đổi trang phục.
+- **Hiện diện:** KHÔNG BAO GIỜ bỏ — xuất hiện trong mọi thumbnail và mọi video, mở đầu + kết thúc luôn có mặt. Vai trò như 1 "phóng viên" đứng tại hiện trường minh hoạ; ở scene thuần biểu đồ/số liệu/so sánh có thể để biểu cảm đơn giản, trọng tâm dồn vào nội dung minh hoạ thay vì vào Gấu.
+- **Vai trò narrative:** "Con gấu láu cá nhìn thấu mọi chiêu trò kiếm tiền" — kể chuyện với thái độ tỉnh táo, đôi khi mỉa mai nhẹ

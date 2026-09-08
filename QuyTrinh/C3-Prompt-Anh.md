@@ -4,49 +4,67 @@
 > Đầu ra: `prompt-anh.txt` (1 dòng = 1 prompt hoàn chỉnh) + ảnh trong `Anh Video/` của thư mục tập.
 > Ghi nhớ: kênh dùng **ảnh tĩnh, cắt cứng giữa các ảnh** (KHÔNG zoom/pan, không chuyển động bên trong ảnh) — đúng định dạng đã chốt ở `docs/DNA.md` mục 1. Nguồn style/nhân vật gốc: `docs/Visual-Prompts-goc.md` (charStyle, bgStyle, masterPrompt mẫu). Việc chia scene đã làm xong ở `QuyTrinh/C2-Chia-Scene.md` — KHÔNG tự chia lại ở bước này, chỉ dựng prompt chi tiết cho từng scene đã có sẵn trong `scene-list.md`.
 
-## Nguyên tắc viết prompt (bắt buộc)
+## Nguyên tắc cứng (bắt buộc, không đổi giữa các tập)
 - Viết prompt bằng **tiếng Anh**.
-- **Mascot Gấu KHÔNG BAO GIỜ bỏ** (khác kênh chị em `TruyenTuDuy`) — xuất hiện trong đa số scene vì Gấu là người dẫn chuyện trực tiếp phân tích số liệu, chỉ bỏ Gấu ở scene thuần minh hoạ bối cảnh/biểu đồ trừu tượng không cần nhân vật bình luận.
-- Bối cảnh chia 2 nhóm theo `docs/Visual-Prompts-goc.md` mục 2 (bgStyle): (1) nền phẳng minh hoạ (tòa nhà công ty, biểu đồ, mô hình kinh doanh) và (2) nền ảnh thật đường phố/văn phòng/quán xá Việt Nam mờ nhẹ để Gấu nổi bật. Mọi bối cảnh đời thực đều phải đẩy hẳn sang Việt Nam (xe máy, biển hiệu, quán vỉa hè, nội thất Việt quen thuộc) — không dùng bối cảnh phương Tây chung chung.
+- **Mascot Gấu KHÔNG BAO GIỜ bỏ**, trừ scene thuần đồ hoạ/số liệu không cần nhân vật bình luận.
+- **charStyle Phần A (nhận diện — đầu, mắt híp, vest xanh navy, kính, răng vàng) phải dán nguyên văn mọi prompt có Gấu, không rút gọn**, kể cả ảnh cận cảnh/crop hẹp. Ngoại lệ duy nhất: khung hình thật sự cắt cụt 1 phần theo bố cục thì ghi rõ lý do trong prompt thay vì âm thầm bỏ mô tả. **KHÔNG dán Phần B (tư thế mặc định của bảng reference sheet gốc)** vào prompt scene thật — Phần B chỉ dùng khi gen lại chính bảng reference sheet.
+- Mỗi prompt có Gấu phải có câu chặn ngay sau mô tả nhân vật: `no beard, no mustache, no extra facial hair, no extra accessories, no clothing details beyond what is explicitly described above`.
+- Mỗi prompt kết thúc bằng câu chặn chữ/vật thể lạ: `no random or unrelated text, letters, numbers, or logos anywhere in the image beyond what is explicitly described above, no random unrelated objects beyond what is described above, no visible grid lines or ruler marks anywhere in the image`.
+- Mọi chữ đọc được trong ảnh phải là **tiếng Việt** hoặc số/ký hiệu tiền tệ — cấm AI tự bịa chữ tiếng Anh dù chung chung (VD "revenue", "profit").
+- **Quy tắc 30 độ**: 2 ảnh liên tiếp của cùng 1 chủ thể phải đổi góc camera tối thiểu ~30 độ hoặc đổi cỡ cảnh rõ rệt — không để 2 ảnh cạnh nhau giống hệt bố cục.
+- **Không tái dùng y hệt 1 ảnh/bối cảnh đã gen cho tập trước sang tập khác** — YouTube coi là "reused content", có thể bị hạn chế phân phối/kiếm tiền dù ảnh tự tạo miễn phí. Mỗi tập cần bối cảnh/góc quay dàn dựng riêng, dù dùng chung charStyle/sceneStyle cố định của Gấu.
+- Toàn bộ ảnh luôn là **1 ảnh AI gen thuần tuý trong 1 phong cách nhất quán** theo bgStyle (`docs/Visual-Prompts-goc.md` mục 2) — KHÔNG tách lớp/ghép ảnh chụp thật ngoài đời, KHÔNG hiệu ứng xoá phông/phủ đen phức tạp.
+
+## Kinh nghiệm thực tế khi viết prompt (rút ra từ thử nghiệm, cân nhắc linh hoạt theo từng scene — không phải checklist ép đủ mọi mục)
+- **Bối cảnh phải cụ thể/chi tiết, không mô tả chung chung** (VD "quầy pha chế inox, ly nhựa xếp chồng, bảng giá viết tay dán băng keo" thay vì chỉ "quán trà sữa") — mô tả mơ hồ kiểu "shop backdrop" dễ khiến AI tự chọn nhầm loại bối cảnh khác hẳn (tiệm đồng hồ, bàn văn phòng...) không liên quan ngành nghề tập, phải khoá rõ đúng ngành nghề mỗi khi tả bối cảnh mờ phía sau.
+- **Ưu tiên nền phong-cách-ảnh-thật (mờ nhẹ phía sau) hơn nền phẳng đơn sắc cho scene có Gấu**, kể cả cận cảnh — chỉ dùng nền phẳng 1 màu khi thật sự không có bối cảnh nào hợp lý.
+- Chữ trong ảnh: cho phép AI vẽ chữ khi thật sự cần (biển hiệu, bảng số liệu) nhưng **rút ngắn tối đa 3-6 từ** — câu càng dài càng dễ sai chính tả/dấu; chữ nhỏ/ở xa thì mô tả mờ không đọc được thay vì ép đọc rõ. Sau khi gen, kiểm tra chính tả chữ được yêu cầu đọc rõ ở bước QA (`C4-Doi-ten-Kiem-tra-Anh.md`), gen lại riêng ảnh nếu sai.
+- **Tránh icon dạng biểu tượng cảnh báo phổ biến kiểu logo** (tia chớp, dấu chấm than trong tam giác...) — dễ bị hệ thống lọc bản quyền/IP hiểu nhầm là nhãn hiệu có sẵn, gây từ chối tạo ảnh khó đoán mà đổi câu chữ khác trong cùng prompt không sửa được; phải đổi hẳn cách diễn đạt cảnh báo (qua biểu cảm/tư thế) mới hết.
+- **Tránh bố cục "split composition" (cắt đôi khung hình đúng qua thân nhân vật)** — AI xử lý kém, dễ cắt lìa/lệch màu nhân vật. Cần thể hiện tương phản trước/sau thì đặt nhân vật nguyên vẹn 1 bên, phần tương phản chỉ nằm ở hậu cảnh.
+- **Tránh bố cục "cực cận + cắt cúp 1 phần mặt nhân vật"** — có vẻ dễ bị kiểm duyệt từ chối nhầm hơn cỡ cảnh thấy trọn đầu/vai; ưu tiên cận vừa (medium close-up) khi cần tiêu điểm biểu cảm.
+- **Khi tay/chi tiết cận cảnh là tiêu điểm chính, nhắc lại tường minh quy tắc nhận diện quan trọng ngay trong mô tả tư thế của scene đó** (VD "rounded fingertips, no claws") — chỉ dựa vào charStyle chung ở đầu prompt không đủ, càng cận cảnh AI càng dễ tự vẽ lệch.
+- Tránh dùng từ "grid"/"grid line" khi mô tả bố cục 1/3 — mô tả vị trí bằng lời thường (VD "positioned roughly one third from the right edge, not centered") kèm câu chặn không có đường kẻ lưới.
+- Ghi rõ vị trí chủ thể trong khung ở mọi prompt theo quy tắc 1/3 (đa số lệch trái/phải, luân phiên giữa các scene liên tiếp), chỉ để giữa khung khi cần nhấn mạnh (hook mở đầu, thumbnail).
 
 ## Bước 1 — Chọn cảnh cho từng scene
 Với mỗi scene trong `scene-list.md`:
-- Minh hoạ đúng nội dung đoạn đó (Gấu đang tính toán/chỉ vào biểu đồ/dò xét qua kính, hoặc hình ảnh biểu tượng cho khoản chi phí/mô hình đang giải thích).
-- Giữ **charStyle + sceneStyle cố định, tái sử dụng nguyên văn trong mọi prompt của tập** (`docs/Visual-Prompts-goc.md` mục 1 và 3) để cả bộ ảnh không bị rời rạc khi ghép lại.
-- **Áp dụng quy tắc 30 độ (30-degree rule)**: 2 ảnh liên tiếp của CÙNG 1 chủ thể phải đổi góc camera tối thiểu ~30 độ HOẶC đổi cỡ cảnh rõ rệt (toàn cảnh → cận cảnh). Luân phiên các loại góc quay (toàn cảnh, trung cảnh, cận mặt, cận tay/vật dụng, góc nghiêng, góc thấp, góc cao, qua vai, cận vật thể) sao cho 2 ảnh cạnh nhau không cùng loại/cùng cỡ cảnh.
+- Minh hoạ đúng nội dung đoạn đó. Gấu đóng vai trò như 1 "phóng viên" đứng tại hiện trường minh hoạ (tính toán/chỉ vào biểu đồ/dò xét qua kính...).
+- **Scene thuần biểu đồ/số liệu/so sánh**: nếu có Gấu thì để biểu cảm đơn giản, trọng tâm dồn vào nội dung minh hoạ chứ không phải Gấu. Chỉ bỏ hẳn Gấu khi cảnh thật sự không cần ai đứng cạnh.
 - Đánh dấu riêng 1-2 scene có bố cục bắt mắt nhất (Gấu rõ nét, có vùng trống để đè chữ) làm ứng viên thumbnail — xem `QuyTrinh/C6-Thumbnail.md`.
+- Trước khi xuất `prompt-anh.txt`, rà lại toàn bộ danh sách bối cảnh của các scene trong CÙNG 1 tập — đổi góc không gian/đồ vật khác nhau, trừ khi nội dung thật sự tiếp diễn cùng 1 khoảnh khắc.
+
+## Bước 1.5 — Hoá trang theo tập (tuỳ chọn sáng tạo, chỉ làm khi cần)
+Mặc định Gấu giữ nguyên vest xanh navy mọi tập. Nếu tập này có 1 tình huống đủ hợp để Gấu hoá thân thành nhân vật trong câu chuyện (VD nhân viên pha chế, khách hàng, tài xế...) và thấy đáng làm để tăng sức hút, hỏi người dùng xác nhận trước khi làm. Nếu đồng ý:
+1. Viết 1 prompt "ảnh tham chiếu hoá trang" riêng cho tập này: giữ nguyên phần nhận diện gương mặt (đầu, mắt híp, răng vàng, màu lông), chỉ đổi trang phục/đạo cụ theo vai diễn — sinh reference sheet tương tự `Fanpage-Asset/gau_mascot.jpg` gốc.
+2. Lưu vào `Bai-Dang/Tap N - [tên]/gau-hoa-trang-ref.jpg`, dùng làm tham chiếu xuyên suốt cho MỌI scene hoá trang trong tập đó.
+3. Các scene khác trong CÙNG tập không cần hoá trang vẫn có thể quay lại vest gốc — không bắt buộc hoá trang xuyên suốt cả video.
+
+## Bước 1.6 — Kho kỹ thuật hình ảnh làm ảnh tĩnh sống động (chọn linh hoạt theo scene, không phải quay vòng cố định)
+Ảnh tĩnh không animation/zoom/pan, nên "sức sống thị giác" phải đến từ góc máy, bố cục, ánh sáng — không lặp mãi 1 kiểu đứng thẳng nhìn thẳng camera. Đây là kho lựa chọn, mỗi scene tự cân nhắc dùng gì, không ép đủ mọi kỹ thuật vào 1 tập và không dùng đúng 1 trình tự cố định giữa các tập:
+
+**Cỡ cảnh:** đại cảnh/thiết lập → toàn cảnh → trung cảnh → cận vừa → cận mặt → cực cận đặc tả (mắt, tay, chi tiết vật thể/con số).
+
+**Góc máy — chọn theo cảm xúc muốn tạo:** ngang tầm mắt (trung tính); góc thấp ngước lên (uy quyền/áp lực, hợp chi phí lớn/rủi ro); góc cao nhìn xuống (nhỏ bé/bất lực, hợp thất bại/thua lỗ); góc nghiêng lệch trục (bất ổn, hợp rủi ro/bất thường); góc chim bay (tổng quan mô hình/sơ đồ); qua vai (quan sát 1 tình huống).
+
+**Bố cục tạo cảm giác chuyển động dù ảnh đứng yên:** đường chéo dẫn mắt thay vì đối xứng tĩnh; lấy khung qua 1 lớp tiền cảnh mờ; dáng đứng như "đóng băng giữa chuyển động" (đang bước, tay đang vung) thay vì đứng yên hoàn toàn; tương phản sáng-tối/rim light tách lớp chủ thể khỏi nền.
+
+Cross-check với quy tắc 30 độ: khi luân phiên góc/cỡ cảnh giữa các scene liên tiếp, ưu tiên lấy từ kho kỹ thuật này thay vì chỉ đổi qua đổi lại 2-3 kiểu quen thuộc.
 
 ## Bước 2 — Viết prompt
 
-> **Phân biệt rõ 2 loại yếu tố:**
-> - **CỐ ĐỊNH xuyên suốt mọi tập** (không đổi): charStyle của Gấu (đầu to tròn, mắt híp, vest xanh navy `#0C447C`, kính lão gọng tròn vàng đồng `#BA7517`), sceneStyle (flat 2D cartoon, viền đen dày 3-4px).
-> - **THAY ĐỔI theo từng tập/scene**: bối cảnh/địa điểm cụ thể (quán trà sữa, phòng gym, văn phòng ngân hàng, đường phố Việt Nam...) theo đúng ngành nghề tập đó, KHÔNG lặp lại y hệt 1 bối cảnh cho mọi tập.
->
-> **Cảnh báo lỗi thường gặp:** vì mọi prompt đều tái sử dụng 1 charStyle cố định, rất dễ vô tình lặp lại gần như y hệt bối cảnh cho nhiều scene khác nhau trong cùng 1 tập. **Trước khi xuất `prompt-anh.txt`, rà lại toàn bộ danh sách bối cảnh của các scene trong CÙNG 1 tập** — đổi sang góc không gian/đồ vật khác nhau (quầy thu ngân, kho hàng, bàn làm việc, biển hiệu ngoài cửa, ghế chờ khách...) trừ khi nội dung thật sự tiếp diễn cùng 1 khoảnh khắc.
-
-> **Character Lock — KHÔNG BAO GIỜ rút gọn**: khi viết prompt cho ảnh cận cảnh/crop hẹp, không được tự ý cắt bớt cụm mô tả cố định của Gấu (đặc biệt kính lão + mắt híp + vest xanh navy) để "cho gọn" — luôn dán ĐẦY ĐỦ nguyên văn charStyle, kể cả khi prompt đã dài. Ngoại lệ DUY NHẤT: nếu khung hình thật sự cắt cụt phần đó theo bố cục, phải ghi rõ lý do trong prompt (VD "cropped below the eyes so the glasses are not visible in this shot") thay vì âm thầm bỏ mô tả.
-> **Chặn AI tự vẽ thêm chi tiết lạ không có trong mô tả** — mọi prompt PHẢI có câu chặn tường minh ngay sau mô tả nhân vật: "no beard, no mustache, no extra facial hair, no extra accessories, no clothing details beyond what is explicitly described above". Sau khi gen ảnh, kiểm tra kỹ ở bước QA (`C4-Doi-ten-Kiem-tra-Anh.md`) xem Gấu có bị vẽ thêm chi tiết lạ không (VD tự thêm râu, đổi màu vest), gen lại riêng ảnh đó nếu có.
-
-**charStyle cố định** (dán nguyên văn mọi prompt có Gấu — lấy từ `docs/Visual-Prompts-goc.md` mục 1):
+**charStyle cố định — CHỈ phần nhận diện (Phần A), dán nguyên văn mọi prompt có Gấu, KHÔNG kèm tư thế mặc định — lấy từ `docs/Visual-Prompts-goc.md` mục 1:**
 ```
-Bear cartoon character, stylized 2D style similar to meme mascot characters, large round head taking up about 40% of the body, chubby round body shape, dark brown/black fur color (#4A3728-like). Half-moon shaped squinty eyes, small sparkling black pupils giving a sly/cunning impression (distinct from big round bulging eyes), slightly slanted eyebrows creating a scrutinizing expression. Moderately wide mouth, light brown lips, usually smirking rather than open-mouthed. Small black triangular nose. Simplified cartoon limb structure, rounded 3-4 finger hands in a darker brown than the body, no clearly detailed claws. Outfit: dark navy blue business suit vest (#0C447C), navy or black bow tie, white dress shirt, round gold-bronze reading glasses (#BA7517) — the glasses are the key identifying detail. Thick even black outline strokes about 3-4px, flat shading with minimal gradient, occasional light shading for fabric fold volume. No beard, no mustache, no extra facial hair, no extra accessories, no clothing details beyond what is explicitly described above.
+Bear cartoon character, stylized 2D style similar to meme mascot characters, moderately large round head taking up about 30% of the body, tall and lean build with a dignified, statuesque stance (not chubby/rotund, not short/squat — long legs, confident posture like a distinguished gentleman). Consistent solid dark chocolate-brown fur color (hex approx #4A3728, a deep rich brown — NOT light tan, NOT caramel, NOT near-black) applied identically in every image. Half-moon shaped squinty eyes, small sparkling black pupils giving a sly/cunning impression (distinct from big round bulging eyes), slightly slanted thick eyebrows creating a scrutinizing expression. Moderately wide mouth, light brown lips, usually smirking with a single glinting gold tooth visible on one side — Gau's signature quirky detail. Small black triangular nose. Simplified cartoon limb structure, slender long arms and legs, rounded 3-4 finger hands in a darker brown than the body, no clearly detailed claws. Outfit: sharp, well-tailored dark navy blue business suit with vest fitted close to the body (#0C447C), navy or black bow tie, crisp white dress shirt, round gold-bronze reading glasses (#BA7517) — the glasses and the gold tooth are the key identifying details. Thick even black outline strokes about 3-4px, flat shading with minimal gradient, occasional light shading for fabric fold volume. Overall silhouette should feel tall, polished, and authoritative with a hint of mischief — rather than short, stiff, or cartoonishly round. No beard, no mustache, no extra facial hair, no extra accessories, no clothing details beyond what is explicitly described above.
 ```
 
-**sceneStyle cố định** (dán nguyên văn mọi prompt):
+Sau đoạn charStyle trên, mỗi prompt PHẢI viết tiếp riêng 1 cụm mô tả **tư thế + biểu cảm dành riêng cho scene đó** — không để trống, không tái dùng y hệt cụm tư thế của scene khác trong cùng 1 tập. Biểu cảm nên phong phú/hơi phóng đại kiểu meme theo nội dung từng đoạn (mắt trợn kinh ngạc, cười sằng sặc, ôm đầu giả vờ đau khổ...) thay vì mặc định lặp lại 1 dáng.
+
+**sceneStyle cố định (dán nguyên văn mọi prompt):**
 ```
-Flat 2D cartoon style, thick even black outline 3-4px, flat coloring with minimal gradient, large round head chubby body taking up ~40% of the body, sly squinty eyes instead of bulging eyes, blend of flat illustrated backgrounds and photo-realistic backgrounds, primary color palette navy blue - gold bronze - white - black.
+Flat 2D cartoon style, thick even black outline 3-4px, flat coloring with minimal gradient, moderately large round head on a tall, lean, statuesque body taking up ~30% of the body, sly squinty eyes instead of bulging eyes, blend of flat illustrated backgrounds and photo-realistic backgrounds, primary color palette navy blue - gold bronze - white - black.
 ```
 
-Với mỗi scene, viết 1 prompt hoàn chỉnh gồm: sceneStyle + charStyle (nếu có Gấu trong scene) + **bối cảnh cụ thể của scene đó** (địa điểm rõ ràng, có đồ vật/ánh sáng/chi tiết không gian thật kiểu Việt Nam) + tư thế/hành động của Gấu (nheo mắt tính toán, chỉ tay vào biểu đồ, cười khẩy, khoanh tay...) + chi tiết minh hoạ ý của đoạn. Áp dụng các quy tắc kỹ thuật sau cho MỌI prompt:
-- **Cho phép AI vẽ chữ TRONG bối cảnh khi thật sự cần** (bảng hiệu quán, màn hình máy tính hiển thị số liệu, biểu đồ có nhãn) — chỉ ghi rõ nguyên văn nội dung chữ và yêu cầu đọc rõ được khi chữ đó **đủ lớn/đủ gần khung hình để người xem thực sự đọc được**. **Nội dung chữ luôn phải là tiếng Việt, không dùng tiếng Anh** (VD "Giá vốn", "Lãi ròng" thay vì "COGS", "Net profit" — trừ khi bản thân video có nhắc thuật ngữ tiếng Anh đó).
-- **Chữ nhỏ/ở xa**: mô tả là chữ mờ/không đọc rõ — dùng cụm "small blurry illegible text, not meant to be readable" thay vì ép AI viết chính xác.
-- **Ngay cả khi chữ đủ to/là tiêu điểm chính, vẫn rút ngắn tối đa nội dung** (lý tưởng 3-6 từ) — câu càng dài, AI càng dễ vẽ sai chính tả/dấu.
-- Sau khi gen ảnh, kiểm tra kỹ các đoạn chữ được yêu cầu đọc rõ có đúng chính tả/dấu tiếng Việt không, phát hiện lỗi phải gen lại riêng ảnh đó (theo `C4-Doi-ten-Kiem-tra-Anh.md`).
-- **Vẫn BẮT BUỘC chặn chữ/logo NGẪU NHIÊN không được mô tả** — câu chặn cuối mỗi prompt phải nêu rõ: chỉ được xuất hiện chữ nếu đã mô tả tường minh ở trên, cấm mọi chữ/logo khác.
-- **Tránh dùng từ "grid"/"grid line"** khi mô tả bố cục theo quy tắc 1/3 — mô tả vị trí chủ thể bằng lời thường (VD "positioned roughly one third of the way in from the right edge, not centered") và thêm câu chặn "no visible grid lines or ruler marks anywhere in the image".
-- **Bắt buộc ghi rõ vị trí chủ thể trong khung ở MỌI prompt** — áp dụng quy tắc 1/3, đa số scene đặt Gấu lệch trái hoặc lệch phải khung hình, chỉ để giữa khung khi thật sự cần nhấn mạnh (hook mở đầu nhìn thẳng camera, khoảnh khắc cao trào/thumbnail). Luân phiên lệch trái/lệch phải giữa các scene liên tiếp.
-- **Cách chừa vùng trống cho chữ (chỉ áp dụng cho scene ứng viên thumbnail):** mô tả không gian liền mạch tự nhiên, chỉ dồn Gấu về giữa-phải hoặc giữa-trái, phần còn lại đơn giản không đặt thêm đồ vật — không mô tả vùng trống như 1 mảng tách rời.
-- Mỗi prompt kết thúc bằng câu chặn: `no random or unrelated text, letters, numbers, or logos anywhere in the image beyond what is explicitly described above, no random unrelated objects beyond what is described above`.
+Mỗi prompt hoàn chỉnh = sceneStyle + charStyle (nếu có Gấu) + bối cảnh cụ thể + tư thế/hành động + chi tiết minh hoạ ý của đoạn, áp dụng đủ các nguyên tắc cứng và kinh nghiệm ở trên.
 
 ## Bước 3 — Xuất `prompt-anh.txt`
 1 file `prompt-anh.txt` (text thường) — **mỗi dòng = 1 prompt hoàn chỉnh của 1 ảnh, nằm gọn trên 1 dòng** (không xuống dòng giữa chừng 1 prompt), **đúng thứ tự ảnh 001→0NN** khớp `scene-list.md`, không có dòng trống xen giữa, không có số thứ tự/tiêu đề ở đầu dòng.

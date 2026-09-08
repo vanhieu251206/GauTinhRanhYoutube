@@ -1,6 +1,6 @@
 # cach-lam-chuan.md — Quy trình chuẩn + checklist chất lượng
 
-> Nhân bản từ kênh chị em `TruyenTuDuy`/`TruyenMaAudio` (đúc kết từ khảo sát blog uy tín về xây kênh YouTube faceless — vidIQ, Murf.ai, BecomeViral), điều chỉnh cho ngách phân tích tài chính/mô hình kinh doanh đời thường. Không copy nguyên guide chung — chỉ giữ phần áp dụng được cho ngách này.
+> Đúc kết từ khảo sát blog uy tín về xây kênh YouTube faceless (vidIQ, Murf.ai, BecomeViral), điều chỉnh riêng cho ngách phân tích tài chính/mô hình kinh doanh đời thường của kênh — chỉ giữ phần áp dụng được cho ngách này.
 
 ## 0. Thứ tự ưu tiên tổng — 3 yếu tố cửa vào trước, nội dung trau dồi sau
 Một kênh chỉ xoay quanh 3 yếu tố quyết định lượt ưu tiên hiển thị của thuật toán:
@@ -28,7 +28,7 @@ Một kênh chỉ xoay quanh 3 yếu tố quyết định lượt ưu tiên hi�
 - Sau khi viết xong `voice-script.txt`, Claude phải tự rà lại dấu hiệu "nghe AI quá" trước khi đưa người dùng đọc — xem checklist chi tiết ở `QuyTrinh/C1-Script.md` Bước 3.5 (câu lệch nhịp, không liệt kê đối xứng, tránh cụm sáo rỗng ở `docs/DNA.md` mục 7).
 - Hook phải rơi vào ~15 giây đầu, disclaimer bắt buộc theo ngay sau (khung ở `docs/DNA.md` mục 3).
 - Cắt bỏ mọi chi tiết không phục vụ trực tiếp mạch bóc tách chi phí hoặc câu hỏi người xem đang tò mò.
-- Áp dụng framework **Nghiên cứu → Học cấu trúc → Remix**: khảo sát cách kể/nhịp hook của kênh reference "Ếch Biết Tuốt" và các kênh phân tích tài chính khác đang hút khán giả, remix theo công thức riêng — không tự phát minh lại nhịp kể từ đầu, nhưng không sao chép nội dung/số liệu của họ.
+- Áp dụng framework **Nghiên cứu → Học cấu trúc → Remix**: khảo sát cách kể/nhịp hook của các kênh phân tích tài chính đang hút khán giả, remix theo công thức riêng của Gấu Tinh Ranh — không tự phát minh lại nhịp kể từ đầu, nhưng không sao chép nội dung/số liệu của họ.
 
 ## 5. Checklist sản xuất Voice
 - Batch-record: thu nhiều tập voice cùng lúc thay vì làm lẻ tẻ từng tập — tiết kiệm effort, giữ giọng/tông nhất quán giữa các tập.
@@ -72,7 +72,7 @@ Một kênh chỉ xoay quanh 3 yếu tố quyết định lượt ưu tiên hi�
 1. **Từ khoá** người xem thật sự search (tra vidIQ/Keyword Tool nếu có) — ưu tiên tên ngành nghề/dịch vụ cụ thể, không dùng khái niệm trừu tượng.
 2. **Gây tò mò** — dạng câu hỏi ("Lãi thật không?"), nghịch lý, tiết lộ bí mật, con số cụ thể.
 3. **Đúng nội dung thật** — không giật tít sai lệch (tránh mất retention → mất đề xuất → có thể bị đánh dấu spam).
-→ Dùng đúng 1 trong 3 Formula (A/B/C) đã chốt ở `docs/Channel-DNA-goc.md` mục 1, không tự sáng tạo format tiêu đề khác.
+→ 3 yếu tố trên là bắt buộc. 3 Formula (A/B/C) ở `docs/Channel-DNA-goc.md` mục 1 chỉ là **kho mẫu tham khảo có sẵn**, không bắt buộc dùng liên tục — dùng nhiều tập liền dễ khiến tiêu đề nghe rập khuôn. Có thể tự viết cấu trúc câu mới miễn vẫn đạt đủ 3 yếu tố trên. Xem cách hỏi người dùng ở `QuyTrinh/C1-Script.md` Bước 2.
 
 ## 11. Ràng buộc riêng của kênh này (không có trong guide chung — override guide khi mâu thuẫn)
 - Mọi checklist trên phải tuân theo khung an toàn nội dung ở `docs/DNA.md` mục 4 — không tư vấn đầu tư cụ thể, không nêu đích danh doanh nghiệp/cá nhân kèm phán xét tiêu cực.

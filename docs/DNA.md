@@ -6,7 +6,7 @@
 ## 1. Ngách
 Kênh phân tích **mô hình kiếm tiền/lỗ lãi thật của các ngành nghề/dịch vụ đời thường Việt Nam** (quán trà sữa, tiệm rửa xe, phòng gym, tài xế công nghệ, cầm đồ online, bảo hiểm nhân thọ...) và các quyết định tài chính cá nhân phổ biến (vay mua nhà, vay tiêu dùng, thẻ tín dụng...) — bóc tách COGS, chi phí cố định, điểm hoà vốn, chi phí ẩn mà người ngoài ít nghĩ tới. Giọng kể tinh ranh/mỉa mai nhẹ qua nhân vật mascot "Gấu". Định dạng: **ảnh tĩnh + voice**, không animation.
 
-Kênh nhân bản cấu trúc/quy trình từ kênh chị em `TruyenTuDuy` (giải trí tri thức tâm lý) và tham khảo trực tiếp art style + cấu trúc video của kênh reference **"Ếch Biết Tuốt"** — đổi hẳn identity nhân vật, bảng màu, và chủ đề sang tài chính/kinh doanh bình dân.
+Kênh có identity nhân vật, bảng màu và chủ đề riêng, tập trung trọn vẹn vào tài chính/kinh doanh bình dân.
 
 ## 2. Persona — Gấu (Gấu Tinh Ranh)
 Gấu từng là "tay chơi" quan sát đủ loại mô hình kiếm tiền ngoài đời — từ quán xá vỉa hè đến ngân hàng lớn — nên chẳng còn lạ gì mấy trò "vẽ vời" của người làm ăn. Giờ Gấu khoác vest lịch sự, kể lại cho anh em nghe sự thật đằng sau từng đồng tiền, không giấu giếm, không nể nang.
@@ -15,9 +15,9 @@ Gấu từng là "tay chơi" quan sát đủ loại mô hình kiếm tiền ngo�
 
 **Ngôi kể:** thứ nhất — Gấu xưng "tôi", gọi khán giả là "anh em".
 
-**Ngoại hình:** gấu nâu/đen, dáng mập tròn, đầu to ~40% cơ thể, mắt híp bán nguyệt (tinh ranh, KHÁC mắt lồi to tròn của Ếch), nhếch mép cười khẩy, vest xanh navy (#0C447C) + nơ bướm + kính lão gọng tròn vàng đồng (#BA7517) — chi tiết nhận diện thay cho hoa hồng đỏ của Ếch. Chi tiết đầy đủ ở `docs/Visual-Prompts-goc.md`.
+**Ngoại hình:** gấu nâu/đen, dáng cao gầy, đứng thẳng đĩnh đạc như một quý ông lịch lãm (không mập tròn, không lùn), đầu to vừa phải ~30% cơ thể, mắt híp bán nguyệt (tinh ranh), nhếch mép cười khẩy, vest xanh navy may đo sắc sảo ôm dáng (#0C447C) + nơ bướm + kính lão gọng tròn vàng đồng (#BA7517) — chi tiết nhận diện riêng. Chi tiết đầy đủ ở `docs/Visual-Prompts-goc.md`.
 
-## 3. Cấu trúc video (bắt buộc theo thứ tự)
+## 3. Cấu trúc video (bắt buộc theo thứ tự — khung lõi, cố định)
 1. **Hook mở đầu** (0-15s) — nêu nghịch lý/câu hỏi cụ thể kèm số liệu (VD "Ly trà sữa 25.000đ, tưởng lãi đậm lắm chứ gì?").
 2. **Disclaimer ngắn cố định** (đặt ngay sau hook, nguyên văn mục 5).
 3. **Bối cảnh ngành/hiện tượng** — giới thiệu mô hình đang phân tích.
@@ -25,7 +25,9 @@ Gấu từng là "tay chơi" quan sát đủ loại mô hình kiếm tiền ngo�
 5. **Điểm hoà vốn + chi phí ẩn/cơ hội** — dùng câu nối chuyển cảnh cố định: "Giờ mới đến khúc xương khó nhằn đây..."
 6. **Kết luận bài học tài chính + catchphrase kết** (nguyên văn mục 5).
 
-Thời lượng tham khảo: 7-9 phút/video, tần suất 2 video/tuần (điều chỉnh theo năng lực sản xuất thực tế).
+Thứ tự 6 bước lõi này KHÔNG đổi giữa các tập. Nhưng **cách triển khai bên trong mỗi bước phải đa dạng theo từng tập** — xem "Kỹ thuật kể chuyện bổ trợ" ở `QuyTrinh/C1-Script.md` Bước 1.5 (giai thoại mở bài, số liệu theo mốc năm, thống kê gây sốc, case study thật ẩn danh, mid-roll CTA, mở rộng rủi ro/xu hướng...). Đây là 1 **kho công cụ chọn linh hoạt**, KHÔNG phải công thức cố định phải nhét đủ vào mọi tập theo đúng 1 vị trí/tần suất — nếu tập nào cũng dùng y hệt combo kỹ thuật ở y hệt chỗ thì các tập sẽ nghe "rập khuôn" dù chủ đề khác nhau.
+
+Thời lượng tham khảo: 7-9 phút/video (có thể dài hơn nếu nội dung/số liệu đủ chiều sâu để giữ chân người xem, không ép ngắn cho đủ mốc), tần suất 2 video/tuần (điều chỉnh theo năng lực sản xuất thực tế).
 
 ## 4. Khung an toàn nội dung (BẮT BUỘC)
 - Không tư vấn đầu tư cụ thể (không nói mua cổ phiếu/coin/mã nào) — chỉ phân tích, không tư vấn.
@@ -57,5 +59,5 @@ Xem đầy đủ ở `docs/Style-Guide-goc.md` mục 2-3. Tóm tắt:
 - Số liệu không có nguồn/không thể kiểm chứng mà không gắn khung "ước tính cá nhân".
 - Chủ đề chính trị/chính sách nhà nước nhạy cảm không cần thiết.
 
-## 8. Đối thủ / tham chiếu
-Kênh reference chính: **"Ếch Biết Tuốt"** (art style, cấu trúc video). Đối chiếu chi tiết ở `docs/Visual-Prompts-goc.md` mục "Đối chiếu với kênh reference".
+## 8. Bản sắc art style / cấu trúc video
+Art style và cấu trúc video là bộ nhận diện riêng của kênh, chốt chi tiết ở `docs/Visual-Prompts-goc.md`.

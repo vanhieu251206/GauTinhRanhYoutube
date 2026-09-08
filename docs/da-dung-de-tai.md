@@ -7,7 +7,8 @@
 ## Đã dùng (theo thứ tự tập)
 | Tập | Pillar | Tên tập | Ngành/chủ đề | Góc kể unique | Ngày đăng |
 |---|---|---|---|---|---|
-| _(chưa có)_ | | | | | |
+| 1 | Ăn uống bình dân | Trà Sữa | Quán trà sữa tầm trung | COGS + chi phí ẩn (hao hụt, hoa hồng app giao đồ ăn) | Đã đăng |
+| 2 | Ăn uống bình dân | Cơm Chay 15k | Quán cơm chay bình dân giá siêu rẻ | Mặt bằng tăng gấp 5 lần nhưng giá không đổi; chi phí cơ hội về chất lượng; rủi ro chính sách bình ổn giá | Đã đăng |
 
 ## Kho ý tưởng chờ sản xuất (thứ tự launch sequence — làm theo thứ tự trừ khi có lý do đổi)
 | Thứ tự | Topic | Pillar | Lý do ưu tiên |
@@ -18,7 +19,7 @@
 | 4 | Xe công nghệ | Vận tải và di chuyển | Đối tượng khán giả rộng, ai cũng từng đi hoặc từng chạy |
 | 5 | Bảo hiểm nhân thọ | Ngành tài chính lớn | Chủ đề gây tranh cãi cao, tăng tương tác mạnh sau 4 video nền tảng |
 | 6 | Xe đẩy bán đồ ăn vặt | Ăn uống bình dân | Vốn siêu nhỏ, dễ đồng cảm với người xem phổ thông |
-| 7 | Chuỗi cầm đồ online | Ngành tài chính lớn | Mở rộng góc nhìn công nghệ, tạo khác biệt với kênh gốc |
+| 7 | Chuỗi cầm đồ online | Ngành tài chính lớn | Mở rộng góc nhìn công nghệ, đa dạng hoá chủ đề |
 | 8 | Bỏ tiền mặt | Giả định vĩ mô | Video vĩ mô đầu tiên, đa dạng hoá nội dung sau chuỗi 7 video vi mô |
 
 **Topic còn lại (16 topic, chưa xếp lịch cụ thể)** — tra chi tiết Title/Hook ở `docs/Chu-De-goc.md`:
@@ -29,5 +30,5 @@ _(chưa có)_
 
 ## Nguồn tra cứu gợi ý đề tài
 - 8 pillar cố định (xem đầy đủ ở `docs/Chu-De-goc.md`): Ăn uống bình dân / Dịch vụ đời thường / Bán lẻ và tiệm nhỏ / Tài chính cá nhân / Ngành tài chính lớn / Vận tải và di chuyển / Dịch vụ gia đình và giáo dục / Giả định vĩ mô.
-- Kênh reference chính: "Ếch Biết Tuốt" — tra outlier (view/sub cao bất thường) trên vidIQ trước khi chốt góc kể mới.
+- Tra outlier (view/sub cao bất thường) trên vidIQ ở các kênh phân tích tài chính/kinh doanh đang lên trước khi chốt góc kể mới.
 - Ưu tiên topic Evergreen trước Trending (bảng phân loại ở `docs/Chu-De-goc.md` mục 3) trừ khi có tín hiệu thời sự mạnh.
