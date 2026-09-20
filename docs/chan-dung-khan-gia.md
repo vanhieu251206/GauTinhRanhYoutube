@@ -8,11 +8,13 @@
 - Chưa có dữ liệu nghề nghiệp, thu nhập, nơi ở, kênh khác khán giả xem.
 
 ## 2. Chân dung suy ra từ comment kênh Ếch Biết Tuốt (NHÃN: suy luận)
-Nguồn: ~10 ảnh comment, like tối đa 5, chưa đếm tần suất; là khán giả của đối thủ cùng ngách/format, khả năng chồng lấn cao nhưng chưa kiểm chứng.
+Nguồn: 16 ảnh comment (đã đếm ~24 yêu cầu, xem `docs/bao-cao-nghien-cuu-ngach.md` mục 3), like tối đa 8; là khán giả của đối thủ cùng ngách/format, khả năng chồng lấn cao nhưng chưa kiểm chứng.
 
 | Bằng chứng | Suy ra |
 |---|---|
-| Nêu vốn 500tr, số bàn, lương NV 1,5tr, "bán quán 15 năm" | Có chủ quán đang hoạt động và người sắp mở, có vốn hoặc đang cân nhắc vốn thật |
+| Nhân viên quán nhậu tự nói lương phục vụ ~1,5tr/tháng; chủ quán 15 năm nuôi 7 miệng ăn; chủ chuỗi photobooth; sale phòng gym chê video; người xin video bê tông nông thôn; người ở vùng nông nghiệp mùa vụ | Đa dạng: chủ nhỏ, người làm thuê trong nghề, có cả người ở nông thôn/thu nhập thấp |
+| Một người có 500tr, "sợ không đủ mưu sinh" khi mua xe tải | Có vốn tích cóp nhưng hạn chế, cần thẩm định kỹ trước khi xuống tiền |
+| Comment "rửa tiền" (3 like), trêu, bóng đá, tiếng lóng thân mật | Có nhóm hoài nghi/giải trí, nghiêng nam giới trẻ |
 | Tự tính "ngày kiếm 10tr mới đủ, tháng chi 300tr" | Quen tính dòng tiền, muốn tự kiểm chứng số liệu |
 | Phản biện nhiều (tạp hóa vs nước chè; quán net lãi từ đồ ăn) | Nhiều người trong nghề/gần nghề, hoài nghi, đối chiếu với thực tế của mình |
 | Nhận xét video karaoke thiếu phần mong chờ | Để ý độ đầy đủ của các khoản mục |

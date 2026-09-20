@@ -22,9 +22,10 @@
 
 | Thứ tự | Topic | Pillar | Lý do ưu tiên |
 |---|---|---|---|
-| N1 | Cho thuê xe tự lái | Vận tải và di chuyển | Comment cao like nhất (5), Ếch chưa làm; góc vay mua xe, khấu hao, tỷ lệ lấp đầy |
-| N2 | Quán lẩu / buffet | Ăn uống bình dân | Được xin trực tiếp; cùng họ quán nhậu (112N) và tạp hóa (82N); giá vốn dễ tính |
-| N3 | Xe tải nhỏ chở hàng | Vận tải và di chuyển | Có người xin kèm vốn 500tr; góc mua trả góp vs thuê xe |
+| N1 | Xe tải nhỏ chở hàng (chạy thuê vs vay mua xe) | Vận tải và di chuyển | Khảo sát comment 20/09: bài toán quyết định rõ nhất (có người 500tr sợ không đủ); nhóm xe/ô tô có 5/24 yêu cầu |
+| N2 | Cho thuê xe tự lái | Vận tải và di chuyển | Yêu cầu chủ đề nhiều like nhất (5); làm sớm trước Ếch (họ đã "Oke bác nhé"); góc vay mua xe, khấu hao, tỷ lệ lấp đầy |
+| N3 | Gara ô tô / phụ tùng ô tô; điện thoại cũ/mới | Dịch vụ đời thường | Mỗi chủ đề được xin trong khảo sát (điện thoại 4 like); đã có sẵn trong kho (#7, #8) |
+| N3b | Quán lẩu / buffet | Ăn uống bình dân | Được xin nhưng Ếch trả lời "sẽ có video nhé" → nguy cơ trùng, để sau |
 | N4 | Shop quần áo (bán lẻ có mặt bằng) | Bán lẻ và tiệm nhỏ | Được xin 2 lần; góc tồn kho, hàng xả, vốn xoay vòng, tránh hàng fake |
 | N5 | Quán nước chè, trà đá vỉa hè | Ăn uống bình dân | Vốn nhỏ, có người so với tạp hóa; cafe vỉa hè của Ếch đạt 21N. Gộp/liên quan mục 7 "Xe đẩy đồ ăn vặt" |
 | N6 | Trung tâm game / esports | Dịch vụ đời thường | Quán NET là video top của Ếch (349N); làm sau để tránh so sánh trực diện |

@@ -15,11 +15,23 @@
 4. Đưa comment đối thủ vào AI để tìm chủ đề được nhắc nhiều.
 - Rủi ro: đánh giá quá lạc quan về "nội dung tái sử dụng", xung đột lợi ích (Hải bán tài nguyên), cỡ mẫu nhỏ, lệch dữ liệu do một tài khoản.
 
-## 3. Chủ đề khán giả xin (comment Ếch Biết Tuốt)
-- Vận tải/dịch vụ: cho thuê xe tự lái (5 like, cao nhất), Grab, xe tải nhỏ (Ahamove).
-- Quán ăn/giải trí: quán lẩu, quán nhậu, quán net, nước chè vỉa hè, tạp hóa, karaoke.
-- Bán lẻ: quần áo (2 người xin), quần áo fake online. Nghề tay chân: barber, trộn bê tông. Khác: game, "xân biển", HDPE, Esports.
-- Người xem nêu vốn thật (500tr, lương nhân viên 1,5tr), thích mổ xẻ dòng tiền, hay phản biện — nguồn ý tưởng cho phần 2. Kênh Ếch trả lời gần như mọi comment để kích thêm gợi ý.
+## 3. Chủ đề khán giả xin (khảo sát 16 ảnh comment kênh Ếch Biết Tuốt, đếm 20/09/2026)
+Đếm được ~24 yêu cầu từ 24 tài khoản khác nhau (chỉ phần comment "Nổi bật" hiển thị trong ảnh, không phải toàn bộ).
+
+| Nhóm | Số lượt | Chi tiết |
+|---|---|---|
+| Xe/ô tô | 5 | Cho thuê xe tự lái (5 like), xe tải nhỏ chạy Ahamove, Grab, gara ô tô, phụ tùng ô tô |
+| Game | 3 | Giải đấu Esports, ngành game, buôn acc game |
+| Ăn uống | 2 | Quán lẩu, buffet (Ếch trả lời "sẽ có video nhé") |
+| Thời trang | 2 | Quán quần áo, quần áo fake bán mạng |
+| Cắt tóc/barber | 2 | Đã có video sau đó vài ngày |
+| Lẻ (1 lượt) | 10 | Điện thoại cũ/mới (4 like), bê tông trộn nông thôn (2 like), nhà thuốc, nhân viên cây xăng, buôn hàng thanh lý, phế liệu HDPE, "xân biển", BĐS/chung cư, mô hình BNI, gym |
+
+Nhận xét:
+- Không ai xin chủ đề tài chính thuần (vay, thẻ, chứng khoán); toàn ngành/nghề cụ thể.
+- Nhiều người xin "nghề" làm thuê/tay chân (bê tông, cây xăng, hàng thanh lý, acc game), nhưng view thật của Ếch tập trung ở quán ai cũng mở được (net, cơm, nhậu) — yêu cầu chưa chắc bằng view.
+- Ếch trả lời "Oke bác" gần như mọi comment và ra video trong vài ngày (cắt tóc, photobooth) → rủi ro Ếch làm trước các chủ đề xe tự lái/lẩu/xe tải trong vài tuần (suy luận).
+- Comment nhiều like nhất là 8 (phản biện "ông này không phải dân nhậu"); yêu cầu chủ đề nhiều like nhất là xe tự lái (5).
 
 ## 4. View các video của Ếch Biết Tuốt (quan sát)
 Quán NET 349N · cơm bình dân 255N · quán nhậu 112N · tạp hóa 82N · cầm đồ 76N · phở 61N · bida 60N · lương 20tr mua ô tô 36N · đại lý vé số 35N · xe ôm 25N · cắt tóc 24N · cafe vỉa hè 21N · gym 16N · photobooth 14N · Hải Sapa TV 12N · Mixue 11N · karaoke 11N · đồng nát 11N · rạp phim 9,8N · pickleball 8,7N · môi giới chứng khoán 3N · in tiền 2,7N.
@@ -31,7 +43,7 @@ Nhận định: ngành gần gũi ai cũng thấy hằng ngày thắng; tiêu đ
 Đề xuất 3 video đầu: cho thuê xe tự lái, quán lẩu, xe tải nhỏ.
 
 ## 6. Giới hạn & rủi ro
-- Chỉ ~14 ảnh chụp, chưa thấy retention/doanh thu, mới quan sát một kênh, chưa kiểm tra tiêu chí 3-7 kênh nhỏ, chưa đếm tần suất chủ đề.
+- Chỉ 20 ảnh chụp (16 comment + 4 danh sách video), chưa thấy retention/doanh thu, mới quan sát một kênh, chưa kiểm tra tiêu chí 3-7 kênh nhỏ. Đã đếm tần suất trên phần comment hiển thị (mục 3), chưa phải toàn bộ comment.
 - Cần nguồn hình ảnh hợp lệ (tự tạo bằng AI hoặc crop nguồn thật đúng quy định), tuân thủ chính sách nội dung tái sử dụng của YouTube, ghi nguồn + khung "ước tính" cho số liệu.
 - Tránh làm y hệt ngành Ếch đã phủ; khác biệt bằng góc tài chính sâu.
 
