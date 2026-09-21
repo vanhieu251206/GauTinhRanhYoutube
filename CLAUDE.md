@@ -7,7 +7,7 @@
 
 ## 0. BẮT ĐẦU MỖI PHIÊN (làm trước tiên)
 Hỏi người dùng muốn làm gì:
-1. **Tạo video mới** → đi theo quy trình `QuyTrinh/` (C0-Chọn-Chủ-Đề → C1-Script → C2-Chia-Scene → C3-Prompt-Ảnh → C4-Đổi-tên-Kiểm-tra-Ảnh → C5-Timing-Xuất-Clip → C6-Thumbnail → C7-Đăng-bài). C2 chia scene ngay từ text script, không cần đợi voice xuất xong. Sau C1 (làm song song hoặc sau C2 đều được), người dùng tự dán `voice-script.txt` vào TTS xuất `voice.mp3` + `sub.srt` đi kèm (thủ công, không thuộc quy trình có tài liệu riêng). C5 xuất sẵn clip câm đúng thời lượng từng scene bằng ffmpeg (ảnh tĩnh, cắt cứng giữa các ảnh, KHÔNG dùng hiệu ứng zoom/pan); người dùng chỉ còn ghép `voice.mp3` + nhạc nền + sub + logo thủ công bằng CapCut. Đọc `QuyTrinh/C0-Chon-Chu-De.md` trước tiên.
+1. **Tạo video mới** → đi theo quy trình `QuyTrinh/` (C0-Chọn-Chủ-Đề → C1-Script → C1.5-Nhân-Vật-Phụ → C2-Chia-Scene → C3-Prompt-Ảnh → C4-Đổi-tên-Kiểm-tra-Ảnh → C5-Timing-Xuất-Clip → C6-Thumbnail → C7-Đăng-bài). C1.5 rà soát nhân vật phụ nhắc >2 lần trong voice-script, tạo prompt tham chiếu tạo hình đồng bộ phong cách với Gấu (có thể là bước rỗng nếu tập chỉ có Gấu). C2 chia scene ngay từ text script, không cần đợi voice xuất xong. Sau C1 (làm song song hoặc sau C2 đều được), người dùng tự dán `voice-script.md` vào TTS xuất `voice.mp3` + `sub.srt` đi kèm (thủ công, không thuộc quy trình có tài liệu riêng). C5 xuất sẵn clip câm đúng thời lượng từng scene bằng ffmpeg (ảnh tĩnh, cắt cứng giữa các ảnh, KHÔNG dùng hiệu ứng zoom/pan); người dùng chỉ còn ghép `voice.mp3` + nhạc nền + sub + logo thủ công bằng CapCut. Đọc `QuyTrinh/C0-Chon-Chu-De.md` trước tiên.
    - Trước C0, đọc toàn bộ `docs/` (giọng kể, quy ước, cụm từ cấm, kho ý tưởng).
    - Tra `docs/da-dung-de-tai.md` để không lặp ngành nghề/góc kể đã dùng — mỗi tập là 1 ngành nghề/chủ đề tài chính độc lập, các tập đã làm được ghi lại tại đây.
 2. **Theo dõi/đúc kết hiệu quả kênh** → đi theo `QuyTrinh-Chien-Luoc/` (S0-Tổng-Quan → S1-Theo-Dõi-Hiệu-Quả / S2-Đúc-Kết-Định-Kỳ / S3-Đánh-Giá-Ngách). Quy trình này **tách biệt** với quy trình sản xuất video ở trên. Đọc `QuyTrinh-Chien-Luoc/S0-Tong-Quan.md` trước tiên.
@@ -21,15 +21,22 @@ GauTinhRanh/
 ├── CLAUDE.md                   # File tổng (file này)
 ├── Bai-Dang/                    # ĐẦU RA: mỗi video 1 thư mục con (đánh số theo thứ tự)
 │   └── Tap 1 - [ten]/
+│       ├── so-lieu-xac-nhan.md # nhật ký số liệu đã WebFetch xác nhận (C1 Bước 0.5) — viết trước script.md
 │       ├── script.md
-│       ├── voice-script.txt     # bản chính tả đầy đủ, dán vào TTS
+│       ├── voice-script.md     # bản chính tả đầy đủ, dán vào TTS
 │       ├── voice.mp3            # người dùng tự xuất từ TTS
 │       ├── sub.srt              # tải kèm voice.mp3 từ TTS, khớp timing thật — dùng lấy mốc ở C5
-│       ├── scene-list.md        # danh sách scene (C2)
-│       ├── prompt-anh.txt       # 1 dòng = 1 prompt/scene (C3 Bước 3)
-│       ├── Anh Video/            # ảnh 001.jpg...0NN.jpg
+│       ├── Anh Tham Chieu Nhan Vat/  # (tuỳ tập) ảnh + prompt tạo hình nhân vật phụ nhắc >2 lần (C1.5)
+│       │   └── prompt-tham-chieu.txt # mỗi dòng 1 prompt gen nhân vật (gồm cả Gấu), ảnh gen xong đặt tên theo nhân vật (VD gau.jpg, long.jpg)
+│       ├── scene-list.md        # danh sách scene, có cột "Loại ảnh": AI gen / Crop nguồn thật / Icon động (C2)
+│       ├── prompt-anh.txt       # 1 dòng = 1 prompt hoạt cảnh/scene AI gen, KHÔNG dòng trống cho scene loại khác (C3 Bước 4)
+│       ├── crop-nguon.md       # hướng dẫn crop ảnh nguồn thật (STT/link/trích dẫn/ghi chú khung) cho scene Crop nguồn thật (C3 Bước 3)
+│       ├── doi-thu/              # (tuỳ chọn) người dùng tự để script/link đối thủ vào đây trước C1, tham khảo góc hay, KHÔNG copy nguyên văn
+│       ├── Anh Video/            # bộ ảnh cuối, mỗi STT 1 file: 001.jpg... (AI gen, crop nguồn thật) + NNN.png nền trong suốt (Icon động)
+│       ├── prompt-icon.txt      # (tuỳ tập) prompt icon nền trắng cho scene "Icon động" (C3 Bước 3b/4)
+│       ├── Icon Goc/            # (tuỳ tập) ảnh icon nền trắng vừa gen, đổi tên NNN.jpg (C4); bản tách nền NNN.png nằm trong Anh Video/
 │       ├── timing.md            # mốc thời gian mỗi scene (C5)
-│       ├── clips/                # clip câm scene-001.mp4...scene-0NN.mp4 (ffmpeg, C5)
+│       ├── clips/                # clip câm scene-001.mp4...scene-0NN.mp4 (ffmpeg, C5); scene Icon động là .mov nền trong suốt (icon_anim.py, C5 Bước 2b)
 │       ├── clip-hoan-chinh.mp4  # ghép trong CapCut (voice + clips + nhạc/hiệu ứng/sub/logo)
 │       ├── thumbnail-prompt.txt # prompt gen ảnh nền thumbnail đã chốt, KHÔNG chữ (C6 Bước 3)
 │       ├── thumbnail-nen.jpg    # ảnh nền do AI tạo, không chữ, 1280×720px (C6 Bước 5)
@@ -38,6 +45,7 @@ GauTinhRanh/
 ├── QuyTrinh/                    # Quy trình sản xuất 1 video (chỉ đọc, không tự ý sửa)
 ├── QuyTrinh-Chien-Luoc/          # Quy trình chiến lược kênh (chỉ đọc, không tự ý sửa)
 ├── Fanpage-Asset/                # Bio, ảnh đại diện/bìa kênh, concept nhân vật Gấu
+│   └── Khung-Crop-Nguon/          # Khung nền dùng chung mọi tập cho scene "Crop nguồn thật" (prompt.txt + khung-nen.jpg, gen 1 lần — xem C3-Prompt-Anh.md Bước 3)
 └── docs/
     ├── DNA.md                   # Định vị kênh, persona Gấu, giọng kể, cụm từ cấm (đúc kết vận hành)
     ├── Channel-DNA-goc.md        # File gốc: title patterns, hook patterns, video structure
@@ -47,14 +55,17 @@ GauTinhRanh/
     ├── cach-lam-chuan.md        # Quy trình chuẩn + checklist chất lượng
     ├── lich-su-phien.md         # Nhật ký sửa tay (bản gốc → bản sửa → lý do)
     ├── da-dung-de-tai.md        # Tra trước C0 — kho ý tưởng chờ sản xuất + đã dùng
-    ├── chien-luoc-youtube.md    # Nguyên tắc chiến lược tăng trưởng YouTube
+    ├── chien-luoc-youtube.md    # Nguyên tắc chiến lược + benchmark hiệu suất đối thủ — đọc ở C0/C6/C7
+    ├── ky-thuat-ke-chuyen-doi-thu.md  # Kho kỹ thuật kể chuyện đúc kết từ script đối thủ — đọc ở C1 Bước 1.5
+    ├── cum-tu-da-dung.md        # Cụm từ/ví von đã dùng — tránh lặp giữa các tập
+    ├── phong-cach-rep-cmt.md    # Quy tắc giọng điệu khi trả lời bình luận kênh
     └── nhat-ky-hieu-qua.md      # Số liệu CTR/Retention từng video (tạo khi chạy S1 lần đầu)
 ```
 
 ## 2. Yêu cầu chung
 - Ngôn ngữ làm việc: tiếng Việt.
 - Định dạng: **ảnh tĩnh + voice**, KHÔNG animation — mỗi scene là 1 ảnh AI tĩnh, ghép theo timeline voice.
-- Mỗi tập là 1 ngành nghề/chủ đề tài chính độc lập, không nối tiếp cốt truyện. Nhân vật Gấu là người dẫn chuyện cố định, xuất hiện xuyên suốt — không tuỳ chọn, luôn có mặt.
+- Mỗi tập là 1 ngành nghề/chủ đề tài chính độc lập, không nối tiếp cốt truyện. Nhân vật Gấu là người dẫn chuyện cố định của kênh, nhưng **không bắt buộc xuất hiện trong MỌI scene** — chi tiết tần suất xem `QuyTrinh/C3-Prompt-Anh.md` Bước 1 (Gấu xuất hiện định kỳ đủ giữ nhận diện thương hiệu, phần lớn scene ưu tiên minh hoạ bối cảnh/nội dung thật sinh động).
 - Không tự ý sửa file trong `QuyTrinh/` — chỉ sửa khi người dùng xác nhận đạt và yêu cầu cụ thể.
 - Chống lặp/chồng chéo nội dung giữa `CLAUDE.md` ↔ `docs/DNA.md` ↔ `QuyTrinh/C*.md`: trước khi ghi quy tắc mới, kiểm tra đã có ở chỗ khác chưa; nếu có, sửa vào chỗ cũ hoặc trỏ tham chiếu thay vì chép lại.
 - **Kinh nghiệm/đúc kết phải lưu file cứng trong project (thư mục `docs/`), KHÔNG chỉ lưu ở bộ nhớ Claude trên máy** — bộ nhớ đó nằm ngoài project, không được git backup, hư máy là mất. Mọi kiến thức/chiến lược/bài học người dùng chia sẻ hoặc rút ra trong quá trình làm phải ghi thành file `.md` trong `docs/` rồi commit + push lên GitHub để backup thật sự.

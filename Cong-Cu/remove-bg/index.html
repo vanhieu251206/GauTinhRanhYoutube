@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>Tách nền icon</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23111'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%23f7f6f3'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&display=swap&subset=vietnamese" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7f6f3;--panel:#fff;--panel2:#f9f9f8;--ink:#111;--mut:#787774;--line:#eaeaea;--hover:#f1f0ec;
+  --btn:#111;--btn-ink:#fff;--btn-hover:#333;--ring:rgba(17,17,17,.18);--shadow:0 2px 12px rgba(17,17,17,.05);
+  --sans:'Be Vietnam Pro','Segoe UI','Helvetica Neue',system-ui,sans-serif;
+  --serif:'Newsreader',Georgia,serif;
+  --mono:'JetBrains Mono','Cascadia Mono',ui-monospace,monospace;
+  --ease:cubic-bezier(.16,1,.3,1)
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#141413;--panel:#1b1b1a;--panel2:#20201f;--ink:#ecebe7;--mut:#8f8e89;--line:#2c2c2a;--hover:#262624;
+  --btn:#ecebe7;--btn-ink:#141413;--btn-hover:#d4d3ce;--ring:rgba(236,235,231,.25);--shadow:0 2px 12px rgba(0,0,0,.3)}}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:13.5px/1.55 var(--sans);letter-spacing:-.005em;
+  display:grid;grid-template-columns:248px 1fr 272px;-webkit-font-smoothing:antialiased}
+aside{background:var(--panel);padding:22px 20px 24px;overflow:auto;min-height:0}
+#left{border-right:1px solid var(--line)}#right{border-left:1px solid var(--line)}
+
+.brand{display:flex;align-items:center;gap:10px;margin-bottom:26px}
+.brand i{width:22px;height:22px;border-radius:6px;background:var(--ink);display:grid;place-items:center}
+.brand i::after{content:"";width:9px;height:9px;border-radius:50%;background:var(--bg)}
+.brand b{font:400 22px/1 var(--serif);letter-spacing:-.02em}
+
+h3{margin:28px 0 10px;font:500 11px/1 var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--mut)}
+h3:first-of-type{margin-top:0}
+
+button,label.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;background:var(--panel);color:var(--ink);
+  border:1px solid var(--line);border-radius:6px;padding:7px 12px;cursor:pointer;font:500 13px var(--sans);
+  transition:background .2s var(--ease),border-color .2s var(--ease),transform .2s var(--ease),color .2s}
+button:hover,label.btn:hover{background:var(--hover)}
+button:active,label.btn:active{transform:scale(.98)}
+button:focus-visible,label.btn:focus-within,.sw:focus-visible,input:focus-visible{outline:2px solid var(--ring);outline-offset:2px}
+button.primary{background:var(--btn);color:var(--btn-ink);border-color:var(--btn)}
+button.primary:hover{background:var(--btn-hover);border-color:var(--btn-hover)}
+button svg,label.btn svg{width:15px;height:15px;flex:none}
+
+.tools{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.tools button{flex-direction:column;gap:5px;padding:11px 4px 9px;font-size:12px;position:relative}
+.tools button svg{width:18px;height:18px}
+.tools button.on{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.tools kbd{position:absolute;top:5px;right:6px}
+
+kbd{font:400 10px/1 var(--mono);border:1px solid var(--line);border-radius:4px;background:var(--bg);color:var(--mut);padding:2px 4px}
+.tools button.on kbd{background:transparent;border-color:rgba(255,255,255,.28);color:inherit;opacity:.7}
+
+.row{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0}
+.row.two>*{flex:1}
+.field{margin:12px 0}
+.field label{display:flex;justify-content:space-between;align-items:baseline;color:var(--mut);font-size:12.5px;margin-bottom:6px}
+.field b{font:500 12px var(--mono);color:var(--ink);font-variant-numeric:tabular-nums}
+
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:16px;background:transparent;cursor:pointer;margin:0}
+input[type=range]::-webkit-slider-runnable-track{height:2px;background:var(--line);border-radius:2px}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:14px;height:14px;margin-top:-6px;border-radius:50%;
+  background:var(--ink);border:2px solid var(--panel);box-shadow:0 0 0 1px var(--ink);transition:transform .2s var(--ease)}
+input[type=range]:active::-webkit-slider-thumb{transform:scale(1.15)}
+input[type=range]::-moz-range-track{height:2px;background:var(--line)}
+input[type=range]::-moz-range-thumb{width:10px;height:10px;border-radius:50%;background:var(--ink);border:2px solid var(--panel)}
+
+.chk{display:flex;gap:10px;align-items:center;margin:9px 0;color:var(--ink);font-size:13px;cursor:pointer;user-select:none}
+.chk input{-webkit-appearance:none;appearance:none;width:16px;height:16px;flex:none;border:1px solid #c9c8c3;border-radius:4px;background:var(--panel);
+  display:grid;place-items:center;margin:0;cursor:pointer;transition:background .2s,border-color .2s}
+.chk input:checked{background:var(--ink);border-color:var(--ink)}
+.chk input:checked::after{content:"";width:8px;height:4px;border:solid var(--bg);border-width:0 0 1.5px 1.5px;transform:rotate(-45deg) translate(1px,-1px)}
+
+.drop{border:1px dashed #c9c8c3;border-radius:8px;padding:18px 14px;text-align:center;color:var(--mut);margin-bottom:12px;background:var(--panel2);
+  transition:border-color .2s,background .2s}
+.drop.over{border-color:var(--ink);background:var(--hover)}
+.drop label.btn{margin:10px 3px 0}
+
+#prog{font:500 12px var(--mono);color:var(--mut);margin:0 0 10px;display:none}
+#prog.on{display:block}
+#files{display:flex;flex-direction:column;gap:2px}
+#files .f{display:flex;gap:10px;align-items:center;padding:6px;border-radius:8px;cursor:pointer;transition:background .2s var(--ease);
+  animation:in .5s var(--ease) both}
+#files .f:hover{background:var(--hover)}
+#files .f.sel{background:var(--hover);box-shadow:inset 0 0 0 1px var(--ink)}
+#files img{width:40px;height:40px;object-fit:contain;flex:none;border-radius:5px;border:1px solid var(--line);
+  background:repeating-conic-gradient(#e6e4df 0 25%,#fff 0 50%) 0 0/10px 10px}
+#files span{font-size:12.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+main{position:relative;overflow:hidden;background:var(--bg);
+  background-image:radial-gradient(circle at 1px 1px,rgba(120,119,116,.16) 1px,transparent 0);background-size:22px 22px}
+#stage{position:absolute;inset:0;width:100%;height:100%;touch-action:none;cursor:crosshair}
+#hint{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);display:flex;gap:16px;align-items:center;white-space:nowrap;
+  background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:7px 14px;color:var(--mut);font-size:12px;pointer-events:none;box-shadow:var(--shadow)}
+#hint span{display:inline-flex;gap:6px;align-items:center}
+#msg{position:absolute;top:16px;left:50%;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:7px 14px;border-radius:6px;
+  display:none;font-weight:500;font-size:12.5px;animation:in .4s var(--ease)}
+#empty{position:absolute;inset:0;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding:0 12%;pointer-events:none}
+#empty h1{font:400 clamp(40px,5.6vw,84px)/1 var(--serif);letter-spacing:-.035em;margin:0 0 18px;max-width:11ch;text-wrap:balance}
+#empty h1 em{font-style:italic;color:var(--mut)}
+#empty p{margin:0;max-width:44ch;color:var(--mut);font-size:15px;text-wrap:pretty}
+#empty p kbd{font-size:12px;padding:3px 6px}
+
+.bgs{display:flex;gap:8px}
+.sw{width:28px;height:28px;border-radius:6px;border:1px solid var(--line);cursor:pointer;transition:transform .2s var(--ease)}
+.sw:hover{transform:translateY(-1px)}
+.sw.on{box-shadow:0 0 0 2px var(--panel),0 0 0 3px var(--ink)}
+#compare{width:100%;margin-top:6px}
+@keyframes in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media (max-width:1000px){body{grid-template-columns:200px 1fr 230px}#hint{display:none}}
+</style>
+</head>
+<body>
+<aside id="left">
+  <div class="brand"><i></i><b>Tách nền</b></div>
+  <h3>Ảnh</h3>
+  <div class="drop" id="drop">Kéo thả ảnh hoặc cả thư mục vào đây<br><label class="btn"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M228 144v64a12 12 0 0 1-12 12H40a12 12 0 0 1-12-12v-64a12 12 0 0 1 24 0v52h152v-52a12 12 0 0 1 24 0Zm-108.5-8.5a12 12 0 0 0 17 0l40-40a12 12 0 0 0-17-17L140 107V32a12 12 0 0 0-24 0v75l-19.5-19.5a12 12 0 0 0-17 17Z"/></svg>Chọn file<input type="file" id="pick" accept="image/*" multiple hidden></label>
+    <label class="btn"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M216 72h-84.7l-27.2-27.2A20 20 0 0 0 90 39H40a20 20 0 0 0-20 20v138a20 20 0 0 0 20 20h176a20 20 0 0 0 20-20V92a20 20 0 0 0-20-20Z"/></svg>Chọn thư mục<input type="file" id="pickdir" webkitdirectory multiple hidden></label></div>
+  <div id="prog"></div>
+  <div id="files"></div>
+  <h3>Xuất</h3>
+  <div class="field"><label>Chừa lề khi cắt sát (px)<b id="vtrim">24</b></label><input type="range" id="trim" min="0" max="100" value="24"></div>
+  <div class="row"><button class="primary" id="dl" style="flex:1 0 100%">Tải ảnh này (PNG)</button><button id="dlall" style="flex:1 0 100%">Tải tất cả (ZIP)</button></div>
+</aside>
+
+<main>
+  <canvas id="stage"></canvas>
+  <div id="empty">
+    <h1>Tách nền, <em>gọn gàng.</em></h1>
+    <p>Kéo thả ảnh vào đây hoặc dán bằng <kbd>Ctrl</kbd> <kbd>V</kbd>. Nền trắng được tách tự động, phần còn lại bạn sửa tay.</p>
+  </div>
+  <div id="msg"></div>
+  <div id="hint">
+    <span>Cuộn chuột <em style="font-style:normal;color:var(--ink)">zoom</em></span>
+    <span><kbd>Space</kbd> kéo ảnh</span>
+    <span><kbd>Ctrl</kbd><kbd>Z</kbd> hoàn tác</span>
+    <span><kbd>[</kbd><kbd>]</kbd> cỡ cọ</span>
+  </div>
+</main>
+
+<aside id="right">
+  <h3>Công cụ</h3>
+  <div class="tools">
+    <button id="tErase" class="on"><kbd>E</kbd><svg viewBox="0 0 256 256" fill="currentColor"><path d="m225 80.4-51.3-51.4a24 24 0 0 0-33.9 0L31 137.8a24 24 0 0 0 0 33.9l37.7 37.7A8 8 0 0 0 74.3 212H216a8 8 0 0 0 0-16h-84.7L225 102.3a24 24 0 0 0 0-33.9ZM74.3 196 48 169.7a8 8 0 0 1 0-11.3L90 116.5l59.5 59.5-16.4 20Z" transform="translate(0 4)"/></svg>Tẩy</button>
+    <button id="tRestore"><kbd>R</kbd><svg viewBox="0 0 256 256" fill="currentColor"><path d="M224 128a96 96 0 0 1-94.7 96H128a95.4 95.4 0 0 1-66.4-26.6 8 8 0 0 1 11.1-11.5 80 80 0 1 0-1.7-113.4L69.7 88H96a8 8 0 0 1 0 16H48a8 8 0 0 1-8-8V48a8 8 0 0 1 16 0v28.7l6.1-5.6A96 96 0 0 1 224 128Z"/></svg>Khôi phục</button>
+    <button id="tWand"><kbd>W</kbd><svg viewBox="0 0 256 256" fill="currentColor"><path d="M248 152a8 8 0 0 1-8 8h-16v16a8 8 0 0 1-16 0v-16h-16a8 8 0 0 1 0-16h16v-16a8 8 0 0 1 16 0v16h16a8 8 0 0 1 8 8ZM56 72h16v16a8 8 0 0 0 16 0V72h16a8 8 0 0 0 0-16H88V40a8 8 0 0 0-16 0v16H56a8 8 0 0 0 0 16Zm128 128h-8v-8a8 8 0 0 0-16 0v8h-8a8 8 0 0 0 0 16h8v8a8 8 0 0 0 16 0v-8h8a8 8 0 0 0 0-16ZM32 232a8 8 0 0 1-5.7-13.7l136-136a8 8 0 0 1 11.4 11.4l-136 136A8 8 0 0 1 32 232Z" transform="translate(0 -8)"/></svg>Đũa thần</button>
+  </div>
+  <div class="field" style="margin-top:18px"><label>Cỡ cọ<b id="vsize">30</b></label><input type="range" id="size" min="2" max="200" value="30"></div>
+  <div class="field"><label>Độ mềm mép cọ<b id="vsoft">30</b></label><input type="range" id="soft" min="0" max="100" value="30"></div>
+  <div class="field"><label>Ngưỡng đũa thần<b id="vwand">30</b></label><input type="range" id="wand" min="1" max="120" value="30"></div>
+  <div class="row two"><button id="undo">Hoàn tác</button><button id="redo">Làm lại</button></div>
+  <div class="row"><button id="reset" style="flex:1 0 100%">Về kết quả tự động</button></div>
+
+  <h3>Tách nền tự động</h3>
+  <div class="field"><label>Ngưỡng nền (tol)<b id="vtol">14</b></label><input type="range" id="tol" min="2" max="60" value="14"></div>
+  <div class="field"><label>Độ mềm viền (band)<b id="vband">3</b></label><input type="range" id="band" min="1" max="8" value="3"></div>
+  <label class="chk"><input type="checkbox" id="shadow">Xoá bóng đổ xám dính nền</label>
+  <label class="chk"><input type="checkbox" id="holes" checked>Xoá lỗ nền kín (quai nồi…)</label>
+  <div class="row"><button class="primary" id="rerun" style="flex:1 0 100%">Chạy lại tự động</button></div>
+
+  <h3>Nền xem thử</h3>
+  <div class="bgs" id="bgs">
+    <div class="sw on" data-bg="checker" tabindex="0" style="background:repeating-conic-gradient(#e6e4df 0 25%,#fff 0 50%) 0 0/12px 12px"></div>
+    <div class="sw" data-bg="#0c284e" tabindex="0" style="background:#0c284e"></div>
+    <div class="sw" data-bg="#f5ebd7" tabindex="0" style="background:#f5ebd7"></div>
+    <div class="sw" data-bg="#111" tabindex="0" style="background:#111"></div>
+    <div class="sw" data-bg="#e63946" tabindex="0" style="background:#e63946"></div>
+  </div>
+  <div class="row"><button id="compare">Giữ để xem ảnh gốc</button></div>
+</aside>
+
+<script>
+const $=id=>document.getElementById(id);
+const stage=$('stage'),ctx=stage.getContext('2d');
+let items=[],cur=null,tool='erase',bgMode='checker',view={x:0,y:0,s:1},showOrig=false,space=false,cursor=null;
+
+function msg(t,ms=2200){const m=$('msg');m.textContent=t;m.style.display='block';clearTimeout(msg.t);if(ms)msg.t=setTimeout(()=>m.style.display='none',ms)}
+function mk(w,h){const c=document.createElement('canvas');c.width=w;c.height=h;return c}
+function params(){return `tol=${$('tol').value}&band=${$('band').value}&shadow=${$('shadow').checked?1:0}&holes=${$('holes').checked?'auto':'off'}`}
+
+async function addFiles(fl){
+  fl=[...fl].filter(f=>f.type.startsWith('image/')).sort((a,b)=>a.name.localeCompare(b.name,undefined,{numeric:true}));
+  for(const f of fl){
+    if(!f.type.startsWith('image/'))continue;
+    const bmp=await createImageBitmap(f);
+    const orig=mk(bmp.width,bmp.height);orig.getContext('2d').drawImage(bmp,0,0);
+    const it={name:f.name.replace(/\.[^.]+$/,''),file:f,orig,work:mk(bmp.width,bmp.height),auto:null,undo:[],redo:[]};
+    items.push(it);
+  }
+  renderList();
+  if(!cur&&items.length)await select(items[0]);
+  await batch();
+}
+function prog(){
+  const n=items.length,d=items.filter(i=>i.auto).length,f=items.filter(i=>i.failed).length,p=$('prog');
+  p.classList.toggle('on',n>1&&d+f<n);p.textContent=`Đã tách ${d}/${n}`+(f?` · lỗi ${f}`:'');
+}
+let batching=false;
+async function batch(){
+  if(batching)return;batching=true;
+  try{
+    for(;;){
+      const todo=items.filter(i=>!i.auto&&!i.failed),total=items.length;
+      if(!todo.length)break;
+      const it=todo[0];
+      prog();
+      await runAuto(it,true);
+      if(!it.auto)it.failed=true;
+    }
+    prog();msg(`Xong ${items.filter(i=>i.auto).length}/${items.length} ảnh`,2500);
+  }finally{batching=false}
+}
+function runAuto(it,quiet){
+  if(!it.pending)it.pending=runAuto0(it,quiet).catch(e=>{it.failed=true;msg('Lỗi: '+e.message,4000)}).finally(()=>{it.pending=null;prog()});
+  return it.pending;
+}
+async function runAuto0(it,quiet){
+  if(!quiet)msg('Đang tách nền…',0);
+  const r=await fetch('/p?'+params(),{method:'POST',body:it.file});
+  if(!r.ok){msg('Lỗi: '+await r.text(),4000);it.failed=true;return}
+  const bmp=await createImageBitmap(await r.blob());
+  const c=it.work.getContext('2d');c.clearRect(0,0,it.work.width,it.work.height);c.drawImage(bmp,0,0);
+  it.auto=c.getImageData(0,0,it.work.width,it.work.height);
+  it.undo=[];it.redo=[];
+  if(!quiet)msg('Xong',900);renderList();draw();
+}
+async function select(it){
+  cur=it;renderList();
+  fit();
+  if(!it.auto)await runAuto(it);else draw();
+}
+function renderList(){
+  $('empty').style.display=items.length?'none':'flex';
+  const box=$('files');box.innerHTML='';
+  items.forEach(it=>{
+    const d=document.createElement('div');d.className='f'+(it===cur?' sel':'');
+    const im=document.createElement('img');im.src=it.work.toDataURL?it.work.toDataURL('image/png'):'';
+    const s=document.createElement('span');s.textContent=it.name;
+    d.append(im,s);d.onclick=()=>select(it);box.append(d);
+  });
+}
+function fit(){
+  if(!cur)return;
+  const W=stage.clientWidth,H=stage.clientHeight;
+  const s=Math.min(W/cur.orig.width,H/cur.orig.height)*0.92;
+  view={s,x:(W-cur.orig.width*s)/2,y:(H-cur.orig.height*s)/2};
+}
+function resize(){stage.width=stage.clientWidth*devicePixelRatio;stage.height=stage.clientHeight*devicePixelRatio;fit();draw()}
+addEventListener('resize',resize);
+
+function draw(){
+  const dpr=devicePixelRatio,W=stage.width,H=stage.height;
+  ctx.setTransform(1,0,0,1,0,0);ctx.clearRect(0,0,W,H);
+  if(!cur)return;
+  ctx.setTransform(view.s*dpr,0,0,view.s*dpr,view.x*dpr,view.y*dpr);
+  const w=cur.orig.width,h=cur.orig.height;
+  if(bgMode==='checker'){
+    ctx.save();ctx.beginPath();ctx.rect(0,0,w,h);ctx.clip();
+    const cs=16/view.s;ctx.fillStyle='#fff';ctx.fillRect(0,0,w,h);ctx.fillStyle='#e6e4df';
+    for(let y=0;y*cs<h;y++)for(let x=0;x*cs<w;x++)if((x+y)%2==0)ctx.fillRect(x*cs,y*cs,cs,cs);
+    ctx.restore();
+  }else{ctx.fillStyle=bgMode;ctx.fillRect(0,0,w,h)}
+  ctx.imageSmoothingQuality='high';
+  ctx.drawImage(showOrig?cur.orig:cur.work,0,0);
+  if(cursor&&!space&&tool!=='wand'){
+    const r=$('size').value/2;
+    ctx.beginPath();ctx.arc(cursor.x,cursor.y,r,0,7);
+    ctx.lineWidth=1.5/view.s;ctx.strokeStyle=tool==='erase'?'#ff3b30':'#22c55e';ctx.stroke();
+  }
+}
+const toImg=e=>{const r=stage.getBoundingClientRect();return{x:(e.clientX-r.left-view.x)/view.s,y:(e.clientY-r.top-view.y)/view.s}};
+
+function snapshot(){
+  const c=cur.work.getContext('2d');
+  cur.undo.push(c.getImageData(0,0,cur.work.width,cur.work.height));
+  if(cur.undo.length>25)cur.undo.shift();cur.redo=[];
+}
+function undo(){if(!cur||!cur.undo.length)return;const c=cur.work.getContext('2d');cur.redo.push(c.getImageData(0,0,cur.work.width,cur.work.height));c.putImageData(cur.undo.pop(),0,0);draw();renderList()}
+function redo(){if(!cur||!cur.redo.length)return;const c=cur.work.getContext('2d');cur.undo.push(c.getImageData(0,0,cur.work.width,cur.work.height));c.putImageData(cur.redo.pop(),0,0);draw();renderList()}
+
+// cọ có độ mềm: dùng gradient tròn làm mask
+function stamp(p){
+  const c=cur.work.getContext('2d'),r=$('size').value/2,soft=$('soft').value/100;
+  const m=mk(Math.ceil(r*2)+2,Math.ceil(r*2)+2),mc=m.getContext('2d'),cx=m.width/2;
+  const g=mc.createRadialGradient(cx,cx,r*(1-soft),cx,cx,r);
+  g.addColorStop(0,'rgba(0,0,0,1)');g.addColorStop(1,'rgba(0,0,0,0)');
+  mc.fillStyle=g;mc.fillRect(0,0,m.width,m.height);
+  if(tool==='erase'){
+    c.save();c.globalCompositeOperation='destination-out';c.drawImage(m,p.x-cx,p.y-cx);c.restore();
+  }else{
+    // khôi phục: lấy pixel gốc, nhân với mask, vẽ chồng lên
+    const t=mk(m.width,m.height),tc=t.getContext('2d');
+    tc.drawImage(cur.orig,p.x-cx,p.y-cx,m.width,m.height,0,0,m.width,m.height);
+    tc.globalCompositeOperation='destination-in';tc.drawImage(m,0,0);
+    c.drawImage(t,p.x-cx,p.y-cx);
+  }
+}
+function line(a,b){
+  const d=Math.hypot(b.x-a.x,b.y-a.y),step=Math.max(1,$('size').value/6);
+  for(let t=0;t<=d;t+=step){stamp({x:a.x+(b.x-a.x)*t/(d||1),y:a.y+(b.y-a.y)*t/(d||1)})}
+}
+function wand(p){
+  const w=cur.orig.width,h=cur.orig.height,x0=Math.round(p.x),y0=Math.round(p.y);
+  if(x0<0||y0<0||x0>=w||y0>=h)return;
+  snapshot();
+  const o=cur.orig.getContext('2d').getImageData(0,0,w,h).data;
+  const c=cur.work.getContext('2d'),img=c.getImageData(0,0,w,h),d=img.data;
+  const tol=+$('wand').value,i0=(y0*w+x0)*4,r0=o[i0],g0=o[i0+1],b0=o[i0+2];
+  const seen=new Uint8Array(w*h),st=[y0*w+x0];seen[y0*w+x0]=1;
+  while(st.length){
+    const k=st.pop(),i=k*4;
+    if(Math.max(Math.abs(o[i]-r0),Math.abs(o[i+1]-g0),Math.abs(o[i+2]-b0))>tol)continue;
+    d[i+3]=0;
+    const x=k%w,y=(k/w)|0;
+    if(x>0&&!seen[k-1]){seen[k-1]=1;st.push(k-1)}
+    if(x<w-1&&!seen[k+1]){seen[k+1]=1;st.push(k+1)}
+    if(y>0&&!seen[k-w]){seen[k-w]=1;st.push(k-w)}
+    if(y<h-1&&!seen[k+w]){seen[k+w]=1;st.push(k+w)}
+  }
+  c.putImageData(img,0,0);draw();renderList();
+}
+
+let drawing=false,panning=false,last=null,pan0=null;
+stage.addEventListener('pointerdown',e=>{
+  if(!cur)return;stage.setPointerCapture(e.pointerId);
+  if(e.button===1||space){panning=true;pan0={x:e.clientX-view.x,y:e.clientY-view.y};return}
+  if(e.button!==0)return;
+  const p=toImg(e);
+  if(tool==='wand'){wand(p);return}
+  snapshot();drawing=true;last=p;stamp(p);draw();
+});
+stage.addEventListener('pointermove',e=>{
+  if(!cur)return;
+  if(panning){view.x=e.clientX-pan0.x;view.y=e.clientY-pan0.y;draw();return}
+  const p=toImg(e);cursor=p;
+  if(drawing){line(last,p);last=p}
+  draw();
+});
+const endp=()=>{if(drawing){renderList()}drawing=false;panning=false};
+stage.addEventListener('pointerup',endp);stage.addEventListener('pointerleave',()=>{cursor=null;draw()});
+stage.addEventListener('wheel',e=>{
+  e.preventDefault();if(!cur)return;
+  const r=stage.getBoundingClientRect(),mx=e.clientX-r.left,my=e.clientY-r.top;
+  const k=Math.exp(-e.deltaY*0.0015),ns=Math.min(20,Math.max(0.05,view.s*k));
+  view.x=mx-(mx-view.x)*ns/view.s;view.y=my-(my-view.y)*ns/view.s;view.s=ns;draw();
+},{passive:false});
+
+addEventListener('keydown',e=>{
+  if(e.code==='Space'){space=true;e.preventDefault()}
+  if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='z'){e.preventDefault();e.shiftKey?redo():undo()}
+  if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='y'){e.preventDefault();redo()}
+  if(e.key==='['){$('size').value=Math.max(2,$('size').value-6);sync()}
+  if(e.key===']'){$('size').value=Math.min(200,+$('size').value+6);sync()}
+  if(e.key==='e')setTool('erase');if(e.key==='r')setTool('restore');if(e.key==='w')setTool('wand');
+});
+addEventListener('keyup',e=>{if(e.code==='Space')space=false});
+
+function setTool(t){tool=t;['Erase','Restore','Wand'].forEach(n=>$('t'+n).classList.toggle('on',n.toLowerCase()===t));draw()}
+$('tErase').onclick=()=>setTool('erase');$('tRestore').onclick=()=>setTool('restore');$('tWand').onclick=()=>setTool('wand');
+$('undo').onclick=undo;$('redo').onclick=redo;
+$('reset').onclick=()=>{if(!cur||!cur.auto)return;snapshot();cur.work.getContext('2d').putImageData(cur.auto,0,0);draw();renderList()};
+$('rerun').onclick=()=>cur&&runAuto(cur);
+function sync(){['size','soft','wand','tol','band','trim'].forEach(k=>$('v'+k).textContent=$(k).value);draw()}
+['size','soft','wand','tol','band','trim'].forEach(k=>$(k).addEventListener('input',sync));
+document.querySelectorAll('#bgs .sw').forEach(s=>s.onclick=()=>{
+  document.querySelectorAll('#bgs .sw').forEach(x=>x.classList.remove('on'));s.classList.add('on');bgMode=s.dataset.bg;draw();
+});
+const cmp=$('compare');cmp.onpointerdown=()=>{showOrig=true;draw()};cmp.onpointerup=cmp.onpointerleave=()=>{showOrig=false;draw()};
+
+function exportCanvas(it){
+  const m=+$('trim').value,w=it.work.width,h=it.work.height;
+  const d=it.work.getContext('2d').getImageData(0,0,w,h).data;
+  let x0=w,y0=h,x1=-1,y1=-1;
+  for(let y=0;y<h;y++)for(let x=0;x<w;x++)if(d[(y*w+x)*4+3]>8){if(x<x0)x0=x;if(x>x1)x1=x;if(y<y0)y0=y;if(y>y1)y1=y}
+  if(x1<0)return it.work;
+  x0=Math.max(0,x0-m);y0=Math.max(0,y0-m);x1=Math.min(w-1,x1+m);y1=Math.min(h-1,y1+m);
+  const o=mk(x1-x0+1,y1-y0+1);o.getContext('2d').drawImage(it.work,-x0,-y0);return o;
+}
+function save(it){return new Promise(res=>exportCanvas(it).toBlob(b=>{
+  const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=it.name+'_nobg.png';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),4000);res()},'image/png'))}
+$('dl').onclick=()=>cur&&save(cur);
+const CRC=(()=>{const t=new Uint32Array(256);for(let n=0;n<256;n++){let c=n;for(let k=0;k<8;k++)c=c&1?0xEDB88320^(c>>>1):c>>>1;t[n]=c>>>0}return t})();
+const crc32=u=>{let c=0xFFFFFFFF;for(let i=0;i<u.length;i++)c=CRC[(c^u[i])&255]^(c>>>8);return(c^0xFFFFFFFF)>>>0};
+function zip(files){ // files:[{name,data:Uint8Array}] — lưu không nén (PNG đã nén sẵn)
+  const enc=new TextEncoder(),parts=[],cd=[];let off=0;
+  for(const f of files){
+    const n=enc.encode(f.name),crc=crc32(f.data),sz=f.data.length;
+    const h=new DataView(new ArrayBuffer(30));
+    h.setUint32(0,0x04034b50,true);h.setUint16(4,20,true);h.setUint16(6,0x0800,true);h.setUint32(14,crc,true);h.setUint32(18,sz,true);h.setUint32(22,sz,true);h.setUint16(26,n.length,true);
+    parts.push(h.buffer,n,f.data);
+    const c=new DataView(new ArrayBuffer(46));
+    c.setUint32(0,0x02014b50,true);c.setUint16(4,20,true);c.setUint16(6,20,true);c.setUint16(8,0x0800,true);c.setUint32(16,crc,true);c.setUint32(20,sz,true);c.setUint32(24,sz,true);c.setUint16(28,n.length,true);c.setUint32(42,off,true);
+    cd.push(c.buffer,n);off+=30+n.length+sz;
+  }
+  const cs=cd.reduce((a,b)=>a+b.byteLength,0),e=new DataView(new ArrayBuffer(22));
+  e.setUint32(0,0x06054b50,true);e.setUint16(8,files.length,true);e.setUint16(10,files.length,true);e.setUint32(12,cs,true);e.setUint32(16,off,true);
+  return new Blob([...parts,...cd,e.buffer],{type:'application/zip'});
+}
+$('dlall').onclick=async()=>{
+  if(!items.length)return;
+  const files=[],used={};
+  for(let i=0;i<items.length;i++){
+    const it=items[i];msg(`Đang đóng gói ${i+1}/${items.length}…`,0);
+    if(!it.auto&&!it.failed)await runAuto(it,true);
+    if(!it.auto)continue;
+    const b=await new Promise(r=>exportCanvas(it).toBlob(r,'image/png'));
+    let nm=it.name+'_nobg.png';if(used[nm]){nm=it.name+'_'+(used[nm]++)+'_nobg.png'}else used[nm]=1;
+    files.push({name:nm,data:new Uint8Array(await b.arrayBuffer())});
+  }
+  if(!files.length){msg('Chưa có ảnh nào để tải',2500);return}
+  const a=document.createElement('a');a.href=URL.createObjectURL(zip(files));a.download='anh-da-tach-nen.zip';a.click();
+  setTimeout(()=>URL.revokeObjectURL(a.href),8000);msg(`Đã tải ${files.length} ảnh (ZIP)`,2500);
+};
+
+const drop=$('drop');
+['dragover','dragenter'].forEach(ev=>addEventListener(ev,e=>{e.preventDefault();drop.classList.add('over')}));
+['dragleave','drop'].forEach(ev=>addEventListener(ev,e=>{e.preventDefault();drop.classList.remove('over')}));
+async function walk(en,out){
+  if(en.isFile){await new Promise(r=>en.file(f=>{out.push(f);r()},r))}
+  else if(en.isDirectory){
+    const rd=en.createReader();
+    for(;;){const b=await new Promise(r=>rd.readEntries(r,()=>r([])));if(!b.length)break;for(const c of b)await walk(c,out)}
+  }
+}
+addEventListener('drop',async e=>{
+  e.preventDefault();
+  const ents=[...(e.dataTransfer.items||[])].map(i=>i.webkitGetAsEntry&&i.webkitGetAsEntry()).filter(Boolean);
+  if(!ents.length){addFiles([...e.dataTransfer.files]);return}
+  msg('Đang đọc thư mục…',0);
+  const out=[];for(const en of ents)await walk(en,out);
+  addFiles(out);
+});
+$('pick').onchange=e=>{addFiles([...e.target.files]);e.target.value=''};
+$('pickdir').onchange=e=>{addFiles([...e.target.files]);e.target.value=''};
+addEventListener('paste',e=>{const f=[...(e.clipboardData?.files||[])];if(f.length)addFiles(f)});
+resize();
+</script>
+</body>
+</html>
