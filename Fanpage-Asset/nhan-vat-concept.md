@@ -16,5 +16,5 @@ Bear cartoon character, stylized 2D style similar to meme mascot characters, mod
 - Biểu cảm/tư thế thay đổi theo tông đoạn nội dung: nheo mắt tính toán (khi bóc tách chi phí), cười khẩy (khi mỉa mai ảo tưởng làm giàu), dò xét qua kính (khi đặt câu hỏi nghi vấn), chỉ tay (khi chỉ vào biểu đồ/số liệu), khoanh tay tự tin (khi kết luận).
 - Không đặt tên riêng khác ngoài "Gấu" — giữ đúng persona ở `docs/Style-Guide-goc.md` mục 1.
 
-## Ghi chú áp dụng khi viết prompt (C3, C6)
+## Ghi chú áp dụng khi viết prompt (C3, C7)
 Phong cách ảnh: flat 2D cartoon — xem chi tiết đầy đủ charStyle/bgStyle ở `docs/Visual-Prompts-goc.md`.

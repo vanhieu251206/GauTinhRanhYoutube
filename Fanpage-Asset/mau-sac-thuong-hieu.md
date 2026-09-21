@@ -17,4 +17,4 @@
 
 ## Áp dụng
 - `docs/Visual-Prompts-goc.md` — charStyle/bgStyle cố định dùng bảng màu này.
-- `QuyTrinh/C3-Prompt-Anh.md`, `QuyTrinh/C6-Thumbnail.md` — mô tả style cố định dùng chung cho mọi prompt ảnh.
+- `QuyTrinh/C3-Prompt-Anh.md`, `QuyTrinh/C7-Thumbnail.md` — mô tả style cố định dùng chung cho mọi prompt ảnh.

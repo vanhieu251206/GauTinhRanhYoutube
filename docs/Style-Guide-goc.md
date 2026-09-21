@@ -88,11 +88,12 @@ TUYỆT ĐỐI KHÔNG: Đưa lời khuyên đầu tư trực tiếp, dùng thu�
 - **Script format:** viết liền mạch dạng văn nói, không chia bullet trong kịch bản đọc (bullet chỉ dùng cho tài liệu nội bộ)
 - **Emphasis/pause markers:** dùng dấu `...` để đánh dấu chỗ ngừng tạo kịch tính; **in đậm** các con số quan trọng khi soạn kịch bản để editor dễ nhấn nhá khi lồng tiếng
 - **Naming convention file kịch bản:** `SCRIPT_[SốThứTự]_[TênChủĐề_KhôngDấu].md` — ví dụ: `SCRIPT_01_QuanTraSua.md`
-- **Độ dài tối thiểu `voice-script.txt`:** ≥ 8.000 ký tự (đếm ký tự Unicode thực tế, không phải số từ) — chuẩn chốt từ Tập 1 (Trà Sữa, 7.260 ký tự, làm tròn lên hàng nghìn). Đếm bằng Python `len(open(file, encoding='utf-8').read())` để chính xác, tránh dùng `wc -m` (dễ đếm sai byte thay vì ký tự Unicode trên môi trường Windows).
+- **Độ dài tối thiểu `voice-script.md`:** ≥ 8.000 ký tự (đếm ký tự Unicode thực tế, không phải số từ) — chuẩn chốt từ Tập 1 (Trà Sữa, 8.218 ký tự thực đo). Đếm bằng Python `len(open(file, encoding='utf-8').read())` để chính xác, tránh dùng `wc -m` (dễ đếm sai byte thay vì ký tự Unicode trên môi trường Windows).
+- **Tốc độ đọc TTS thật (đo từ 2 mẫu thật — Tập 1 và Tập 3, có `voice.mp3` đo thời lượng thật):** Tập 1 — 8.218 ký tự ≈ 481 giây (8 phút 1 giây). Tập 3 — 11.607 ký tự ≈ 623 giây (10 phút 23 giây, người dùng xác nhận từ video đã đăng). Gộp cả 2 mẫu: **~0,0557 giây/ký tự**, tương đương ~18 ký tự/giây (nhanh hơn ước lượng ban đầu chỉ đo từ 1 mẫu). Dùng công thức `số ký tự × 0,0557 giây` để ước lượng thời lượng video trước khi xuất voice.mp3, tránh viết ngắn hơn mốc tối thiểu trên 8 phút. Cập nhật lại con số này (gộp thêm mẫu mới) mỗi khi đo được tốc độ thật từ 1 tập khác có `voice.mp3` thật.
 
 ## 6. THUMBNAIL TEXT BANK
 
-**Đây là kho mẫu tham khảo có sẵn, không bắt buộc dùng liên tục** — lấy nguyên văn cùng 1 cụm cho nhiều tập khác nhau dễ khiến thumbnail nghe lặp/nhàm dù ngành nghề khác nhau. Xem cách hỏi người dùng ở `QuyTrinh/C6-Thumbnail.md` Bước 2.
+**Đây là kho mẫu tham khảo có sẵn, không bắt buộc dùng liên tục** — lấy nguyên văn cùng 1 cụm cho nhiều tập khác nhau dễ khiến thumbnail nghe lặp/nhàm dù ngành nghề khác nhau. Xem cách hỏi người dùng ở `QuyTrinh/C7-Thumbnail.md` Bước 2.
 
 #### Category: Question
 1. "Lãi thật không?"
@@ -148,10 +149,10 @@ TUYỆT ĐỐI KHÔNG: Đưa lời khuyên đầu tư trực tiếp, dùng thu�
 - Giai đoạn 2 (1.000-10.000 sub, đủ điều kiện AdSense): bật kiếm tiền từ quảng cáo YouTube
 - Giai đoạn 3 (10.000+ sub): thêm affiliate app tài chính/đầu tư minh bạch, có thể mở rộng ebook/khoá học ngắn về quản lý tài chính cá nhân
 
-**Content frequency:** 2 video/tuần, độ dài 7-9 phút mỗi video
+**Content frequency:** 2 video/tuần, độ dài trên 8 phút, không giới hạn trần trên (cập nhật theo yêu cầu người dùng — không còn ép khung 7-9 phút)
 
 **Topics nên tránh:**
 - Không tư vấn đầu tư cụ thể (cổ phiếu, coin, mã nào nên mua) — dễ vi phạm chính sách YouTube về tài chính
-- Không nêu đích danh doanh nghiệp/cá nhân cụ thể kèm phán xét tiêu cực (rủi ro pháp lý)
+- Được nêu đích danh doanh nghiệp cụ thể khi số liệu/sự kiện đã kiểm chứng nguồn báo chí gốc, chỉ thuật lại sự kiện đã công bố, không suy diễn/phán xét thêm (xem `docs/DNA.md` mục 4). Không nêu đích danh cá nhân cụ thể kèm phán xét tiêu cực (rủi ro pháp lý)
 - Không dùng số liệu không kiểm chứng được — luôn giữ khung "ước tính/tổng hợp cá nhân" như disclaimer
 - Tránh chủ đề nhạy cảm chính trị hoặc chính sách nhà nước có thể gây tranh cãi không cần thiết

@@ -25,7 +25,7 @@ Một kênh chỉ xoay quanh 3 yếu tố quyết định lượt ưu tiên hi�
 - Có thể cân nhắc thêm Shorts (30-60s, cắt từ hook/số liệu sốc chính) để duy trì tần suất xuất hiện đều hơn giữa các video dài.
 
 ## 4. Checklist Script
-- Sau khi viết xong `voice-script.txt`, Claude phải tự rà lại dấu hiệu "nghe AI quá" trước khi đưa người dùng đọc — xem checklist chi tiết ở `QuyTrinh/C1-Script.md` Bước 3.5 (câu lệch nhịp, không liệt kê đối xứng, tránh cụm sáo rỗng ở `docs/DNA.md` mục 7).
+- Sau khi viết xong `voice-script.md`, Claude phải tự rà lại dấu hiệu "nghe AI quá" trước khi đưa người dùng đọc — xem checklist chi tiết ở `QuyTrinh/C1-Script.md` Bước 3.5 (câu lệch nhịp, không liệt kê đối xứng, tránh cụm sáo rỗng ở `docs/DNA.md` mục 7).
 - Hook phải rơi vào ~15 giây đầu, disclaimer bắt buộc theo ngay sau (khung ở `docs/DNA.md` mục 3).
 - Cắt bỏ mọi chi tiết không phục vụ trực tiếp mạch bóc tách chi phí hoặc câu hỏi người xem đang tò mò.
 - Áp dụng framework **Nghiên cứu → Học cấu trúc → Remix**: khảo sát cách kể/nhịp hook của các kênh phân tích tài chính đang hút khán giả, remix theo công thức riêng của Gấu Tinh Ranh — không tự phát minh lại nhịp kể từ đầu, nhưng không sao chép nội dung/số liệu của họ.
@@ -33,7 +33,7 @@ Một kênh chỉ xoay quanh 3 yếu tố quyết định lượt ưu tiên hi�
 ## 5. Checklist sản xuất Voice
 - Batch-record: thu nhiều tập voice cùng lúc thay vì làm lẻ tẻ từng tập — tiết kiệm effort, giữ giọng/tông nhất quán giữa các tập.
 - Giữ tông giọng, tốc độ đọc nhất quán xuyên suốt kênh.
-- **Không dùng thẳng giọng TTS mặc định không qua kiểm tra** — sau khi xuất `voice.mp3`, người dùng tự nghe lại ít nhất 1 lượt, chỉnh lại các đoạn giọng đọc phẳng/sai nhịp/sai cảm xúc bằng cách sửa dấu câu hoặc chọn lại voice trong công cụ TTS — lý do: chính sách "Inauthentic content" của YouTube (2026) đánh giá thấp nội dung AI-hoá hoàn toàn không có dấu ấn chỉnh sửa của con người, xem thêm rủi ro chi tiết ở `QuyTrinh/C7-Dang-bai.md` Bước 3.
+- **Không dùng thẳng giọng TTS mặc định không qua kiểm tra** — sau khi xuất `voice.mp3`, người dùng tự nghe lại ít nhất 1 lượt, chỉnh lại các đoạn giọng đọc phẳng/sai nhịp/sai cảm xúc bằng cách sửa dấu câu hoặc chọn lại voice trong công cụ TTS — lý do: chính sách "Inauthentic content" của YouTube (2026) đánh giá thấp nội dung AI-hoá hoàn toàn không có dấu ấn chỉnh sửa của con người, xem thêm rủi ro chi tiết ở `QuyTrinh/C8-Dang-bai.md` Bước 3.
 
 ## 6. Không sa đà giai đoạn setup (lưu ý: không mâu thuẫn với mục 0)
 - Mục 0 nói: phải **luyện kỹ năng viết Tiêu đề + thiết kế Thumbnail cho đúng ngách** trước — đây là kỹ năng, cần đầu tư thời gian nghiên cứu/thử nghiệm thật.

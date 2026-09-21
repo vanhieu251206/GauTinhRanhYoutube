@@ -59,7 +59,7 @@ Trước khi liệt kê danh sách set ở Bước 0, với MỖI set bối cả
 Với mỗi scene trong `scene-list.md`:
 - Minh hoạ đúng nội dung đoạn đó. Gấu đóng vai trò như 1 "phóng viên" đứng tại hiện trường minh hoạ (tính toán/chỉ vào biểu đồ/dò xét qua kính...).
 - **Scene thuần biểu đồ/số liệu/so sánh**: nếu có Gấu thì để biểu cảm đơn giản, trọng tâm dồn vào nội dung minh hoạ chứ không phải Gấu. Chỉ bỏ hẳn Gấu khi cảnh thật sự không cần ai đứng cạnh.
-- Đánh dấu riêng 1-2 scene có bố cục bắt mắt nhất (Gấu rõ nét, có vùng trống để đè chữ) làm ứng viên thumbnail — xem `QuyTrinh/C6-Thumbnail.md`.
+- Đánh dấu riêng 1-2 scene có bố cục bắt mắt nhất (Gấu rõ nét, có vùng trống để đè chữ) làm ứng viên thumbnail — xem `QuyTrinh/C7-Thumbnail.md`.
 - Trước khi xuất `prompt-anh.txt`, rà lại toàn bộ danh sách bối cảnh của các scene trong CÙNG 1 tập — đổi góc không gian/đồ vật khác nhau, trừ khi nội dung thật sự tiếp diễn cùng 1 khoảnh khắc.
 
 ## Bước 1.5 — Hoá trang theo tập (tuỳ chọn sáng tạo, chỉ làm khi cần)
@@ -106,29 +106,43 @@ Với mỗi scene đánh dấu `Crop nguồn thật` ở `scene-list.md`:
    - **Đây là ngoại lệ có chủ đích với quy tắc "không tái dùng ảnh/bối cảnh giữa các tập"** (`docs/chien-luoc-youtube.md` mục 8): khung nền này đóng vai trò như 1 khung trích dẫn/lower-third cố định của kênh (tương tự logo, khung intro/outro), KHÔNG phải ảnh minh hoạ nội dung chính của tập — mỗi tập vẫn có nội dung thật khác nhau được chèn vào (ảnh crop số liệu khác nhau mỗi lần), nên không rơi vào diện "reused content" mà chính sách YouTube nhắm tới (nội dung lặp lại không đổi mới). Nếu sau này cảm thấy khung này xuất hiện quá thường xuyên/nhàm, có thể quay lại làm thêm 1-2 biến thể khác (VD Gấu đứng góc phải, hoặc đổi màu nền) — không bắt buộc chỉ có đúng 1 khung duy nhất mãi mãi.
 4. Nếu scene `Crop nguồn thật` cũng cần Gấu xuất hiện cùng khung (VD Gấu đang chỉ vào màn hình điện thoại chứa ảnh crop), tách thành 2 lớp: **ảnh nền Gấu vẫn viết prompt AI riêng như bình thường** (đổi "Loại ảnh" scene đó thành `AI gen` ở C2 vì lúc này Gấu là chủ thể chính), còn ảnh crop chỉ dùng khi KHÔNG cần Gấu trong khung — tránh nhầm lẫn 2 loại vào chung 1 scene.
 
-## Bước 3b — Scene `Icon động`: viết prompt icon (file riêng `prompt-icon.txt`)
-Từ bước này C3 xuất **2 file prompt tách biệt theo "Loại ảnh"** (xem Bước 4): `prompt-anh.txt` cho hoạt cảnh minh hoạ, `prompt-icon.txt` cho icon. Scene `Icon động` KHÔNG viết chung vào `prompt-anh.txt` vì phong cách, nền và cách xử lý hậu kỳ khác hẳn (icon = 1 vật thể nền trắng, sẽ tách nền rồi cho chuyển động).
+## Bước 3b — Scene `Icon động`: viết prompt icon minh hoạ (file riêng `prompt-icon.txt`)
+Từ bước này C3 xuất **2 file prompt tách biệt theo "Loại ảnh"** (xem Bước 4): `prompt-anh.txt` cho hoạt cảnh minh hoạ (có Gấu), `prompt-icon.txt` cho icon minh hoạ. Scene `Icon động` KHÔNG viết chung vào `prompt-anh.txt` vì phong cách, nền và cách xử lý hậu kỳ khác hẳn.
 
-**Khối style cố định (ghi cứng — nhận diện icon của kênh, dùng nguyên văn cho mọi icon, chỉ thay phần `Object:` cuối dòng):**
+**Phong cách icon minh hoạ (chốt ngày 21/09/2026, theo mẫu người dùng đưa): đồ hoạ 2D phẳng kiểu infographic hoạt hình, nét viền đen đậm, vài vật thể ghép thành 1 sơ đồ giải thích 1 ý, có nhãn tiếng Việt ngắn trên biển gỗ/thẻ kem.** Gen trên **nền trắng tinh** (để tách nền), rồi C5 ghép lên **nền giấy kẻ ô dùng chung** `Fanpage-Asset/Nen-Luoi-O/nen-luoi-o.png` — nền kẻ ô KHÔNG bao giờ đưa vào prompt (sẽ làm tách nền hỏng).
+
+**Khối style cố định (ghi cứng — nhận diện icon của kênh, dùng nguyên văn cho mọi icon, chỉ thay phần `Composition:` cuối dòng):**
 ```
-Premium photorealistic 3D icon render in the style of a high-end fintech and business infographic asset (Blender/Octane look), physically accurate materials such as brushed brass, polished steel, frosted glass, leather, wood and matte enamel, mature sophisticated slightly desaturated colors with deep navy (#0C447C) and bronze-gold (#BA7517) used as material accent colors and natural realistic colors for food and everyday objects, realistic proportions (NOT chunky), soft studio lighting with subtle softbox reflections and crisp detail, three-quarter view, ONE single isolated object floating and centered with generous empty margin, pure flat white background (#FFFFFF), no floor, no ground shadow, no colored glow, no colored shadow, no floor reflection, no gradient. It must NOT look like a toy, cartoon, clay, plush, sticker, emoji or cute mascot; no faces, no eyes, no wings. No text, no letters, no numbers, no logo, no watermark, high resolution, square composition. Object: <MÔ TẢ VẬT THỂ>
+Clean flat 2D cartoon infographic illustration in a bold sticker-like vector look: thick even black outlines (about 4px), flat vivid colors with minimal shading, simple friendly rounded shapes, palette of navy blue (#0C447C), bronze-gold (#BA7517), fresh green, warm red and cream as accent colors. A small composition of 2 to 4 clearly separated elements that explain ONE idea, with short Vietnamese labels (2 to 4 words each) written in bold black hand-lettered sans-serif on wooden signs, cream tags or cards. Pure flat white background (#FFFFFF), no grid, no paper texture, no ground, no floor, no drop shadow, no gradient, generous empty margin around the composition. Use cream, beige or light grey (never pure white) for paper, cards and labels so they stay distinct from the background. Any people shown are simple cartoon figures with faces and expressions, never silhouettes; no bear mascot, no animal character. All legible text is Vietnamese only with exact diacritics, currency is Vietnamese dong written like 199.000đ, never dollars; no other text, letters, numbers or logos beyond what is explicitly described. 16:9 widescreen aspect ratio, landscape orientation. Composition: <MÔ TẢ BỐ CỤC>
 ```
-- **Mỗi dòng `prompt-icon.txt` = khối style trên + `Object: ...` của đúng 1 scene** (1 dòng, không xuống dòng giữa chừng).
-- **Phần `Object:` (CỐT LÕI — viết riêng cho từng icon, không rập khuôn):** tả vật thể cụ thể bằng vật liệu thật (đồng thau, thép, kính, gỗ, da, sứ...), chi tiết nhận diện rõ để không bị nhầm sang đồ chơi. Chỉ 1 vật thể hoặc 1 cụm nhỏ liền khối; người/khách thay bằng tượng trừu tượng không mặt; nếu vật thể có bề mặt viết (tờ tiền, hoá đơn, đồng hồ số...) thì ghi rõ `no numbers, no text, blank`. Chữ/con số cần hiện thì người dùng thêm ở CapCut.
-- **Bài học đã gặp (Tập 9):** các cụm `soft rounded clay-plastic`, `chunky playful proportions`, `cream-white`, cánh nhựa, ghế bé xíu đẩy ra kiểu đồ chơi → không dùng; tả vật thể thật cụ thể (VD taximeter: vỏ nhôm xước, mặt đồng hồ kim, dải LCD, cần gạt cờ đỏ) thay vì tên chung chung; thêm `no blue tint` nếu có bóng xanh dưới đế; tool có thể vẫn ra khổ 16:9 dù ghi vuông — không sao vì `icon_anim.py` tự cắt sát vật thể.
-- **Vì sao nền trắng tinh, không bóng:** `Cong-Cu/remove-bg` tách nền trắng; bóng đổ hoặc chi tiết trắng-bạc sát mép dễ bị ăn mép.
-- Ngoại lệ với quy tắc tỉ lệ 16:9 ở Bước 2: prompt icon KHÔNG cần cụm 16:9 (khung 1920x1080 do `icon_anim.py` dựng).
+- **Mỗi dòng `prompt-icon.txt` = khối style trên + `Composition: ...` của đúng 1 scene** (1 dòng, không xuống dòng giữa chừng).
+- **Phần `Composition:` (CỐT LÕI — viết riêng từng icon, không rập khuôn):** chọn 1 phép ẩn dụ/sơ đồ hợp ý scene (cầu thang tăng dần, cây ra tiền, cán cân, bóc lớp, cột tiền cao thấp, biển chỉ đường, kính lúp...) — mỗi tập/mỗi icon nên khác nhau. Liệt kê rõ từng vật thể, vị trí trái/phải, và **nguyên văn từng nhãn chữ** (2-4 từ, có dấu đầy đủ, số tiền dạng `199.000đ`). Càng ít chữ càng ít lỗi chính tả; nhãn không cần thiết thì bỏ.
+- **Quy tắc tách nền:** dùng kem/be/xám nhạt cho giấy, thẻ, nhãn (không dùng trắng tinh trong vật thể — sẽ bị tách nhầm thành nền); các vật thể tách rời nhau, không chạm mép khung.
+- **Người trong icon:** dùng nhân vật hoạt hình đơn giản có mặt và biểu cảm, không bóng đen; KHÔNG dùng Gấu (Gấu chỉ ở scene `AI gen`).
+- Chữ/số cần đúng tuyệt đối (số liệu) phải kiểm ở C4 sau khi gen; sai thì gen lại riêng ảnh đó.
+- Ngoại lệ với quy tắc tỉ lệ 16:9 ở Bước 2: khối style đã có cụm 16:9; không cần thêm câu chặn chữ/tiền Việt/nền như prompt hoạt cảnh (đã gộp trong khối style).
+- Các icon 3D photoreal nền trắng làm thử ở Tập 9 (`icon-3d.md`) là phong cách cũ, đã thay bằng phong cách này.
 
 ## Bước 4 — Xuất 2 file prompt: `prompt-anh.txt` và `prompt-icon.txt`
 Tách theo cột "Loại ảnh" của `scene-list.md`. **Mỗi file chỉ chứa các dòng của đúng loại của nó, theo đúng thứ tự STT tăng dần, KHÔNG có dòng trống chèn cho scene loại khác** (đổi so với trước: không còn giữ dòng rỗng cho scene crop — tool gen ảnh vốn bỏ qua dòng trống và đánh số theo dòng có prompt; việc ánh xạ dòng ↔ STT thật do C4 làm theo `scene-list.md`):
 - **`prompt-anh.txt`** — hoạt cảnh minh hoạ: mỗi dòng = 1 prompt hoàn chỉnh của 1 scene `AI gen`, nằm gọn trên 1 dòng, đúng thứ tự STT. Không có số thứ tự/tiêu đề đầu dòng.
 - **`prompt-icon.txt`** — mỗi dòng = 1 prompt icon của 1 scene `Icon động` theo Bước 3b, đúng thứ tự STT.
 - Scene `Crop nguồn thật` không có dòng ở file nào (thông tin nằm ở `crop-nguon.md`, Bước 3).
-- Khi báo người dùng, kèm 1 bảng ngắn: mỗi file có bao nhiêu dòng, ứng với những STT scene nào (để C4 và người dùng đối chiếu). Nếu tập không có scene `Icon động` thì không tạo `prompt-icon.txt`.
+- Xuất kèm file **`anh-xa-prompt.md`** (cùng thư mục tập): mỗi file prompt có bao nhiêu dòng và bảng dòng N ↔ STT scene (để C4 và người dùng đối chiếu); khi báo người dùng cũng nêu ngắn gọn số dòng từng file. Nếu tập không có scene `Icon động` thì không tạo `prompt-icon.txt`.
 
 **Vị trí lưu file**: cả 2 file ở gốc `Bai-Dang/Tap N - [tên]/` — KHÔNG để trong `Anh Video/`.
 
 Ngay sau khi xuất, **tạo sẵn thư mục rỗng**: `Anh Video/` (ảnh hoạt cảnh gen + ảnh crop) và, nếu có icon, `Icon Goc/` (ảnh icon nền trắng vừa gen, chưa tách nền) để người dùng có chỗ lưu ngay khi gen xong.
 
 ## Bước 5 — Tạo ảnh & ghép
+**Hướng dẫn gen (nhắc người dùng khi giao 2 file prompt):**
+| File | Gen ra | Bỏ ảnh vào |
+|---|---|---|
+| `prompt-anh.txt` | Hoạt cảnh có Gấu (`AI gen`) | `Anh Video/` |
+| `prompt-icon.txt` | Icon minh hoạ nền trắng (`Icon động`) | `Icon Goc/` |
+- Dán **từng dòng** vào tool gen, mỗi dòng là 1 prompt hoàn chỉnh (không tách/cắt); **giữ nguyên thứ tự dòng** — ảnh thứ N ứng với dòng N, C4 dựa vào `anh-xa-prompt.md` (bảng dòng ↔ STT) để đổi tên.
+- Prompt icon phải ra **nền trắng tinh** (điều kiện để tách nền); nếu tool ra nền khác thì báo lại để sửa prompt.
+- Nên **gen thử 6-8 dòng trải đều mỗi file, kiểm chất lượng (nhất là chữ tiếng Việt, số tiền) rồi mới gen phần còn lại**; dòng nào lỗi thì viết lại prompt và gen lại riêng dòng đó.
+- Claude tạo sẵn 2 thư mục `Anh Video/` và `Icon Goc/` ngay khi xuất prompt (Bước 4) và xuất kèm `anh-xa-prompt.md` (mỗi file prompt: dòng N ↔ STT scene).
+
 Người dùng gen ảnh từ 2 file prompt, bỏ ảnh hoạt cảnh vào `Anh Video/`, ảnh icon vào `Icon Goc/`, và tự crop ảnh nguồn thật theo `crop-nguon.md` (bỏ vào `Anh Video/`). Sau đó `QuyTrinh/C4-Doi-ten-Kiem-tra-Anh.md` đổi tên từng loại theo STT, tách nền icon và **ghép tất cả thành 1 bộ ảnh cuối duy nhất trong `Anh Video/`** (mỗi STT đúng 1 file) trước khi qua timing/xuất clip.
