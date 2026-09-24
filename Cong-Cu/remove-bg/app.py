@@ -6,6 +6,7 @@ Cần:   pip install pillow numpy scipy
 """
 import io
 import os
+import sys
 import threading
 import webbrowser
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
@@ -15,7 +16,7 @@ from PIL import Image
 
 from remove_bg import remove_bg
 
-HERE = os.path.dirname(os.path.abspath(__file__))
+HERE = getattr(sys, "_MEIPASS", os.path.dirname(os.path.abspath(__file__)))  # chạy từ .exe (PyInstaller): file đi kèm nằm trong _MEIPASS
 PORT = 8765
 
 
@@ -57,9 +58,17 @@ class Handler(BaseHTTPRequestHandler):
 
 
 if __name__ == "__main__":
-    srv = ThreadingHTTPServer(("127.0.0.1", PORT), Handler)
-    url = f"http://127.0.0.1:{PORT}"
-    print("Mo", url, "(Ctrl+C de thoat)")
+    for port in range(PORT, PORT + 20):  # cổng bận (đang mở 1 cửa sổ khác) thì thử cổng kế
+        try:
+            srv = ThreadingHTTPServer(("127.0.0.1", port), Handler)
+            break
+        except OSError:
+            continue
+    else:
+        sys.exit("Khong mo duoc cong tu %d den %d" % (PORT, PORT + 19))
+    url = f"http://127.0.0.1:{port}"
+    print("Tach nen dang chay tai", url)
+    print("Dong cua so nay (hoac Ctrl+C) de thoat.")
     threading.Timer(0.8, lambda: webbrowser.open(url)).start()
     try:
         srv.serve_forever()

@@ -21,13 +21,13 @@ sys.stdout.reconfigure(encoding="utf-8")
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.abspath(os.path.join(HERE, "..", ".."))
 
-NUMWORDS = {"một", "hai", "ba", "bốn", "năm", "sáu", "bảy", "tám", "chín", "mười", "trăm", "nghìn", "triệu", "tỷ", "rưỡi", "vài", "mấy"}
+NUMWORDS = {"một", "hai", "ba", "bốn", "năm", "sáu", "bảy", "tám", "chín", "mười", "mươi", "lăm", "mốt", "tư", "linh", "lẻ", "trăm", "nghìn", "triệu", "tỷ", "rưỡi", "vài", "mấy"}
 UNITS = {"đồng", "suất", "khách", "người", "phần", "tiếng", "giờ", "phút", "ngày", "tháng", "năm", "triệu", "nghìn", "tỷ", "ký", "gam", "yên",
-         "bàn", "điểm", "quán", "chỗ", "lượt", "lần", "cái", "khay", "vị", "bữa", "tuổi", "mét", "cây", "lớp", "khoản", "%"}
+         "bàn", "điểm", "quán", "chỗ", "lượt", "lần", "cái", "khay", "vị", "bữa", "tuổi", "mét", "cây", "lớp", "khoản", "câu", "%"}
 CONJ = {"và", "nhưng", "mà", "vì", "nên", "để", "thì", "khi", "nếu", "rồi", "hay", "hoặc", "còn", "tuy", "dù", "cho", "theo", "trong", "với", "cả", "kể", "tức"}
 NOEND = {"là", "và", "của", "ở", "cho", "với", "để", "các", "những", "một", "mỗi", "cái", "thì", "mà", "nhưng", "vì", "nên", "khi", "nếu", "rằng",
          "sẽ", "đã", "đang", "cũng", "rất", "không", "chỉ", "còn", "hay", "hoặc", "tại", "từ", "trong", "theo", "bằng", "như", "do", "nào", "được", "bị",
-         "nhiều", "mọi", "từng", "vài", "mấy", "hơn", "gần", "khoảng", "tầm", "chừng", "trên", "dưới", "chưa", "vẫn", "lại", "phải", "nên"}
+         "nhiều", "mọi", "từng", "vài", "mấy", "hơn", "gần", "khoảng", "tầm", "chừng", "trên", "dưới", "chưa", "vẫn", "lại", "phải", "nên", "vừa", "mới", "chính", "đến", "tự"}
 PRON = {"tôi", "nó", "họ", "mình", "chúng", "ta", "ai", "bạn", "ông", "bà", "anh", "chị"}
 PROTECT = ["búp phê", "buffet", "lãi gộp", "lãi ròng", "giá vốn", "chi phí cố định", "chi phí", "điểm hòa vốn", "hòa vốn", "đồng hồ chỗ ngồi",
            "chỗ ngồi", "hóa đơn điện tử", "hộ kinh doanh", "nghị định", "phần trăm", "khấu hao", "mặt bằng", "dòng tiền", "lẩu mini", "ứng dụng giao hàng",
@@ -35,7 +35,10 @@ PROTECT = ["búp phê", "buffet", "lãi gộp", "lãi ròng", "giá vốn", "chi
            "chủ quán", "khách hàng", "nhân viên", "tiền thuê", "tiền điện", "hợp đồng", "hôm nay", "cuối tháng", "điều hòa", "nước lẩu", "ăn thả ga",
            "anh em", "không phải", "người ăn khỏe", "lời khuyên", "góc nhìn", "cá nhân", "nhà hàng", "tập đoàn", "ước tính", "mô tả", "bình luận",
            "thương hiệu", "sáng lập", "cà phê", "ông chủ", "chính phủ", "doanh thu", "lợi nhuận", "giá vé", "nguyên liệu", "quán ăn", "mặt phố", "tư vấn", "đầu tư",
-           "cơ chế", "hai tiếng", "một tháng", "mỗi tháng", "mỗi ngày", "mỗi suất", "một ngày", "một năm", "cả năm"]
+           "cơ chế", "bọt tuyết", "rửa xe", "tiệm rửa xe", "bảng giá", "đánh bóng bằng máy", "nhựa nhám", "phút công", "dẫn khách",
+           "bao nhiêu", "quyết định", "trung bình", "câu chuyện", "nằm ở", "trước khi", "chia cho", "dừng lại", "bù lại", "học lại", "đọc báo",
+           "dễ vào", "vào này", "người tưởng", "người hên gặp", "biết tính được", "chịu nổi", "đỡ tốn", "mức nhất định", "xe hơn", "ngày làm", "số tiệm", "đường thoát nước",
+           "tiền bạc", "tưởng dễ", "chuyện kiếm", "hai tiếng", "một tháng", "mỗi tháng", "mỗi ngày", "mỗi suất", "một ngày", "một năm", "cả năm"]
 
 
 def norm(s):
@@ -103,23 +106,26 @@ def split_pieces(text, max_chars):
         return [text]
     st = [strip_p(t) for t in tokens]
     # vị trí bị cấm ngắt do cụm cố định
-    inside = set()
+    inside, ends = set(), set()
     for ph in PROTECT:
         pw = ph.split()
         for i in range(n - len(pw) + 1):
             if st[i:i + len(pw)] == pw:
                 inside.update(range(i, i + len(pw) - 1))  # ngắt sau token i (giữa i và i+1) bị cấm
+                ends.add(i + len(pw) - 1)
     def bcost(i):  # chi phí ngắt SAU token i (giữa i và i+1)
         t = tokens[i]
         forb = False
         if re.search(r"\d", t) or st[i] in NUMWORDS:
             if st[i + 1] in UNITS or tokens[i + 1] in UNITS:
                 forb = True
+        if st[i] in NUMWORDS and st[i + 1] in NUMWORDS and not re.search(r"[,;:.?!]$", t):
+            forb = True  # số đọc bằng chữ ("ba | mươi", "mười | lăm"): không tách đôi
         if i in inside:
             forb = True
         punct = t[-1] in ".?!…"
         soft = t[-1] in ",;:"
-        if st[i] in NOEND and not (punct or soft):
+        if st[i] in NOEND and not (punct or soft) and not (i in ends and st[i] in ("lại", "hơn")):  # "dừng lại", "nhiều xe hơn" được đứng cuối
             forb = True
         if st[i] in PRON and not (punct or soft) and not (i > 0 and st[i - 1] in ("của", "cho", "với", "về")):
             forb = True  # đại từ làm chủ ngữ: không tách khỏi động từ đi sau

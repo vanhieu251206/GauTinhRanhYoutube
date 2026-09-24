@@ -40,7 +40,7 @@ Mẫu hook mở đầu (giọng Gấu — láu cá, tỉnh táo):
 
 ## 3. VIDEO STRUCTURE
 
-1. Hook mở đầu (0-15s) — nêu nghịch lý/câu hỏi
+1. Hook mở đầu (0-30s, cấu trúc 3 pha — xem `docs/DNA.md` mục 3) — nêu nghịch lý/câu hỏi
 2. Disclaimer ngắn (câu cố định, xem `docs/DNA.md` mục 5)
 3. Bối cảnh ngành/hiện tượng
 4. Bóc tách COGS + chi phí cố định
@@ -49,7 +49,7 @@ Mẫu hook mở đầu (giọng Gấu — láu cá, tỉnh táo):
 
 Đây là khung lõi cố định thứ tự. Cách triển khai chi tiết bên trong (giai thoại mở bài, số liệu theo năm, case study thật, mid-roll CTA, mở rộng rủi ro...) là kho kỹ thuật bổ trợ chọn linh hoạt theo từng tập — xem `QuyTrinh/C1-Script.md` Bước 1.5, không dùng thành công thức rập khuôn giống nhau mọi tập.
 
-**Transition signature riêng:** dùng câu nối đặc trưng:
+**Transition signature riêng (⚠️ cập nhật 23/09/2026 ở `docs/DNA.md` mục 5 — không còn bắt buộc nguyên văn, chỉ là mẫu tham khảo):**
 > "Giờ mới đến khúc xương khó nhằn đây..."
 
 ## 4. THUMBNAIL STYLE
@@ -66,7 +66,7 @@ Mẫu hook mở đầu (giọng Gấu — láu cá, tỉnh táo):
 | Personality narrator | Gấu láu cá, tỉnh táo, "biết tuốt mọi chiêu trò" |
 | Xưng hô | "Tôi" (Gấu) — "anh em" (khán giả) |
 | Signature phrase mở | (theo hook mẫu mục 2) |
-| Signature phrase giữa | "Giờ mới đến khúc xương khó nhằn đây..." |
+| Signature phrase giữa | "Giờ mới đến khúc xương khó nhằn đây..." (⚠️ không còn bắt buộc từ 23/09/2026, xem `docs/DNA.md` mục 5) |
 | Signature phrase kết | "Tôi là Gấu. Khôn thì sống, ngu thì mất tiền. Hẹn anh em video sau." |
 | Disclaimer cố định | "Thông tin dưới đây là tôi tổng hợp, góp nhặt từ nhiều nguồn, cũng là ý kiến cá nhân chứ không phải tư vấn đầu tư chính thức. Sai chỗ nào anh em cứ chửi thẳng ở comment cho tôi biết." |
 

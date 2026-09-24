@@ -1,6 +1,6 @@
 # C5 — Lấy Timing & Xuất Clip Câm Theo Scene
 
-> Đầu vào: `voice.mp3` + **2 file phụ đề**: `sub.srt` (tải kèm `voice.mp3` từ công cụ TTS — chữ khớp 100% `voice-script.md`, **mốc chính xác hơn, là mốc chính**) và `sub-capcut.srt` (người dùng cho CapCut tự tạo phụ đề từ chính `voice.mp3` rồi xuất `.srt` — **chỉ dùng đối chứng**, chữ có thể sai dấu/số/tên) +  `scene-list.md` + bộ ảnh cuối trong `Anh Video/` (từ C4): mỗi STT đúng 1 file — `NNN.jpg` cho scene `AI gen`/`Crop nguồn thật`, `NNN.png` (nền trong suốt) cho scene `Icon động`.
+> Đầu vào: `voice.mp3` + **2 file phụ đề**: `sub.srt` (tải kèm `voice.mp3` từ công cụ TTS — chữ khớp 100% `voice-script.md`, **mốc chính xác hơn, là mốc chính**) và `sub-capcut.srt` (người dùng cho CapCut tự tạo phụ đề từ chính `voice.mp3` rồi xuất `.srt` — **chỉ dùng đối chứng**, chữ có thể sai dấu/số/tên) +  `scene-list.md` + bộ ảnh cuối trong `Anh Video/` (từ C4): mỗi STT đúng 1 file — `NNN.jpg` cho scene `AI gen`/`Crop nguồn thật`/`Ảnh thật`, `NNN.png` (nền trong suốt) cho scene `Icon động`.
 > Đầu ra: `timing.md` (mốc thời gian mỗi scene) + các clip câm `clips/scene-001.mp4`...`scene-0NN.mp4` — ảnh tĩnh, cắt cứng giữa các scene, KHÔNG dùng hiệu ứng zoom/pan (ngoại lệ duy nhất: scene `Icon động`, xem Bước 2b). Người dùng chỉ còn việc ghép `voice.mp3` + nhạc nền + sub + logo trong CapCut, không cần tự cắt ảnh theo tay.
 
 ## Bước 1 — Lấy mốc thời gian mỗi scene (kết hợp `sub.srt` + `sub-capcut.srt`)
@@ -33,7 +33,7 @@ Cột "Ghi chú": `TTS` (bình thường, 2 file khớp) / `chỉ TTS` (không k
 
 ## Bước 2 — Xuất clip câm theo scene (phân loại theo cột "Loại ảnh" của `scene-list.md`)
 Với mỗi scene, lấy **số khung hình (frame)** đã tính ở Bước 1.3 (không dùng lại số giây thời lượng thô để tránh làm tròn lần 2), rồi **tra cột "Loại ảnh" của đúng STT đó trong `scene-list.md`** để chọn cách xuất — không đoán theo đuôi file:
-- `AI gen` / `Crop nguồn thật` → Bước 2a (ảnh tĩnh, `clips/scene-0NN.mp4`).
+- `AI gen` / `Crop nguồn thật` / `Ảnh thật` → Bước 2a (ảnh tĩnh, `clips/scene-0NN.mp4`).
 - `Icon động` → Bước 2b (chuyển động trên nền kẻ ô, `clips/scene-0NN.mp4`).
 Đầu ra là 1 bộ `clips/` đủ mọi STT, mỗi STT đúng 1 clip. Trước khi chạy, đối chiếu đuôi file `Anh Video/NNN.*` với loại ảnh (`.png` ↔ `Icon động`); lệch thì dừng báo người dùng.
 

@@ -9,19 +9,15 @@ Chưa chốt — YouTube chỉ cho đổi handle giới hạn số lần, cần 
 ## Về "mô tả ngắn dưới tên kênh"
 YouTube không có ô riêng cho mô tả ngắn — 100-150 ký tự ĐẦU của "Mô tả đầy đủ" bên dưới chính là phần hiển thị trong kết quả tìm kiếm.
 
-## Mô tả đầy đủ (phần "Giới thiệu" của kênh)
+## Mô tả kênh (phần "Giới thiệu" — 24/09/2026 người dùng chốt kiểu 1-2 câu ngắn, dân dã: kênh làm gì + không tư vấn đầu tư)
 
 ```
-Gấu Tinh Ranh là kênh phân tích mô hình kiếm tiền thật của các ngành nghề/dịch vụ đời thường Việt Nam và các quyết định tài chính cá nhân phổ biến.
-
-Mỗi video bóc tách giá vốn, chi phí cố định, điểm hoà vốn và chi phí ẩn mà người ngoài ít khi nghĩ tới — từ quán trà sữa, phòng gym, tài xế công nghệ, đến vay mua nhà, thẻ tín dụng, bảo hiểm nhân thọ. Không tư vấn đầu tư, chỉ phân tích để anh em tự nhìn thấu bức tranh tiền bạc thật.
-
-Đăng ký kênh để không bỏ lỡ video mới, đăng 2 lần/tuần.
+Gấu Tinh Ranh — ngồi tính giùm anh em mở quán, mở tiệm, chạy xe lời lỗ thật bao nhiêu. Góc nhìn cá nhân, không tư vấn đầu tư.
 ```
 
 ## Mô tả ngắn (dùng khi cần giới thiệu kênh trong 1-2 câu)
 ```
-Gấu Tinh Ranh — bóc mẽ chuyện lời lỗ phía sau quán trà sữa, tiệm rửa xe, phòng gym, anh xe ôm công nghệ... và những cú xuống tiền quen thuộc như vay mua nhà, quẹt thẻ tín dụng. Kể bằng giọng đời thường, hơi tưng tửng, để hiểu tiền chảy đi đâu. Nội dung mang tính chia sẻ kiến thức, không phải lời khuyên đầu tư.
+Gấu Tinh Ranh ngồi tính giùm anh em: mở một quán, một tiệm, một chiếc xe thì vốn bao nhiêu, tháng tốn gì, bán bao nhiêu mới hoà vốn. Kể bằng giọng đời thường, số liệu tổng hợp và tự tính, không phải tư vấn đầu tư.
 ```
 
 ## Lưu ý nội dung disclaimer (đặt cuối mô tả, bắt buộc theo `docs/DNA.md` mục 5)
@@ -38,6 +34,6 @@ tài chính cá nhân, kinh doanh nhỏ, phân tích lợi nhuận, mô hình ki
 - [ ] Chốt handle kênh (@...) — kiểm tra còn trống trước khi tạo.
 - [ ] Link mạng xã hội khác (nếu có kênh phụ Facebook/TikTok).
 - [ ] Email liên hệ hợp tác.
-- [x] Lịch đăng cố định: 2 video/tuần — đã điền vào mô tả.
+- [ ] Lịch đăng: bản mô tả 24/09/2026 đã bỏ câu "đăng 2 lần/tuần" — chỉ thêm lại khi lịch đăng thật ổn định.
 - [ ] Avatar + banner + mascot Gấu chưa gen.
 - [ ] Kênh nổi bật/liên kết (featured channels, tuỳ chọn).

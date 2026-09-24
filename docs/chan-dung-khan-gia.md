@@ -4,8 +4,9 @@
 > Đọc ở C0 khi chọn chủ đề/góc kể. Nguồn gốc: `docs/bao-cao-nghien-cuu-ngach.md`.
 
 ## 1. Dữ liệu thật (đo được)
-- YouTube Studio kênh Gấu Tinh Ranh (chụp ~13/9/2026): 95,3% nam; 43,6% ở 25-34 tuổi, 31,5% ở 35-44 tuổi; 70,3% xem qua điện thoại.
-- Chưa có dữ liệu nghề nghiệp, thu nhập, nơi ở, kênh khác khán giả xem.
+- YouTube Studio kênh Gấu Tinh Ranh (chụp ~13/9/2026, toàn kênh): 95,3% nam; 43,6% ở 25-34 tuổi, 31,5% ở 35-44 tuổi; 70,3% xem qua điện thoại.
+- Theo từng video (`docs/nhat-ky-hieu-qua.md`, Tập 3): khớp số toàn kênh (95,1% nam, 44,4%/31,2% hai nhóm tuổi, 70,2% mobile) + có thêm 91% ở Việt Nam, 99,9% chưa đăng ký kênh (viewer đến vì tò mò chủ đề, chưa phải fan trung thành).
+- Chưa có dữ liệu nghề nghiệp, thu nhập, kênh khác khán giả xem.
 
 ## 2. Chân dung suy ra từ comment kênh Ếch Biết Tuốt (NHÃN: suy luận)
 Nguồn: 16 ảnh comment (đã đếm ~24 yêu cầu, xem `docs/bao-cao-nghien-cuu-ngach.md` mục 3), like tối đa 8; là khán giả của đối thủ cùng ngách/format, khả năng chồng lấn cao nhưng chưa kiểm chứng.
@@ -30,8 +31,10 @@ Nguồn: 16 ảnh comment (đã đếm ~24 yêu cầu, xem `docs/bao-cao-nghien-
 - Không loại ngành vốn lớn (xe tự lái, xe tải, lẩu) chỉ vì giả định khán giả nghèo.
 - Số liệu phải tự tính lại được, đủ khoản mục, có nguồn, giữ khung "ước tính" (khớp `docs/DNA.md` mục 4).
 - Nên có góc phản trực giác và chỗ đáp lại phản biện phổ biến ("nhiều người nói X, thực ra Y").
+- **Xen thêm mánh khóe/đòn bẩy vận hành thực tế** (cách bố trí menu, mẹo mua sỉ, mẹo giảm hao hụt, mẹo giữ khách quay lại...) bên cạnh phần mô hình tài chính/rủi ro — chạm đúng nhóm 2 (Người trong nghề) đang muốn biết "làm sao tôi lãi hơn", không chỉ nhóm 1 (Người sắp xuống tiền) muốn biết "có nên xuống tiền không". Đây là phần bổ sung làm phong phú tập, KHÔNG thay thế phần phân tích rủi ro/điểm hoà vốn vốn là thế mạnh nhận diện của kênh — chọn mánh khóe phù hợp riêng từng ngành, không dùng công thức cố định cho mọi tập.
 
 ## 5. Cần kiểm chứng thêm
-- Studio kênh mình: Khán giả → địa lý, kênh khác khán giả xem, nguồn traffic.
+- Địa lý: đã có phần qua từng video (91% VN, Tập 3) — cần Studio kênh mình (toàn kênh) để xác nhận không phải riêng 1 video.
+- Studio kênh mình: kênh khác khán giả xem, nguồn traffic.
 - Đọc và đếm comment thật của kênh mình; gom comment video top của Ếch để đếm tần suất chủ đề.
 - Cập nhật file này khi có dữ liệu mới; nếu mâu thuẫn, ưu tiên dữ liệu đo được.

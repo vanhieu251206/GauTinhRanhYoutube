@@ -123,12 +123,29 @@ Clean flat 2D cartoon infographic illustration in a bold sticker-like vector loo
 - Ngoại lệ với quy tắc tỉ lệ 16:9 ở Bước 2: khối style đã có cụm 16:9; không cần thêm câu chặn chữ/tiền Việt/nền như prompt hoạt cảnh (đã gộp trong khối style).
 - Các icon 3D photoreal nền trắng làm thử ở Tập 9 (`icon-3d.md`) là phong cách cũ, đã thay bằng phong cách này.
 
-## Bước 4 — Xuất 2 file prompt: `prompt-anh.txt` và `prompt-icon.txt`
+## Bước 3c — Scene `Ảnh thật`: prompt chung phục hồi ảnh + ghép Gấu (file riêng `prompt-anh-that.txt`)
+Scene `Ảnh thật` (người dùng tự tìm ảnh chụp thật, xem `C2-Chia-Scene.md`) KHÔNG viết chung vào `prompt-anh.txt` — bản chất là chỉnh sửa/ghép trên 1 ảnh có sẵn, không phải gen từ đầu.
+
+**Thư mục tham chiếu**: tạo `Bai-Dang/Tap N - [tên]/Anh Tham Chieu/` ngay ở C2/C3, copy sẵn ảnh Gấu (`Fanpage-Asset/gau_mascot.png` → `Anh Tham Chieu/gau.png`). Người dùng bỏ ảnh thật vào đây. (Khác thư mục `Anh Tham Chieu Nhan Vat/` của C1.5 — thư mục đó chứa ảnh tạo hình nhân vật phụ.)
+
+**Đặt tên ảnh thật = `sNNN` (chữ `s` + STT scene 3 chữ số): `s002.png`, `s017.jpg`...** — KHÔNG đặt tên số trần (`2.png`, `10.png`): tool gen tự khớp ảnh theo "từ khoá = tên tệp xuất hiện trong dòng prompt" (Cách 4, không phân biệt hoa thường, bất kỳ từ đơn nào trong tên tệp đều khớp), số trần dễ khớp nhầm với số khác trong câu lệnh (16:9, 4K, 30K...) và nạp sai ảnh. Nếu tool có Cách 5 (thẻ `@`) thì dùng `@sNNN` cho tường minh hơn.
+
+**Cấu trúc mỗi dòng `prompt-anh-that.txt` (1 dòng = 1 scene `Ảnh thật`, đúng thứ tự STT, tiếng Anh, không dòng trống):**
+1. **Từ khoá ảnh**: `Use the reference photo sNNN as the base image.` — mỗi dòng chứa ĐÚNG 1 từ khoá `sNNN` của scene đó, tuyệt đối không xuất hiện `sNNN` của scene khác; tên ảnh gen ra cũng mang từ khoá này nên C4 ánh xạ trực tiếp.
+2. **Phục hồi ảnh (nguyên văn giống nhau mọi dòng):** phục hồi, làm nét, tăng độ phân giải, đưa về khung 16:9 (mở rộng/cắt khung, giữ nguyên chủ thể chính); vẽ lại mọi khuôn mặt người thành mặt mờ ẩn danh; xoá mọi logo, tên thương hiệu, tên bảng hiệu, số điện thoại, địa chỉ, watermark rồi lấp nền tự nhiên; giữ nguyên số tiền/giá đọc được.
+3. **Ghép Gấu (mặc định có, người dùng chốt 24/09/2026):** dùng ảnh tham chiếu `gau` — Gấu giữ 2D cartoon nét viền dày, ảnh nền giữ photoreal, khớp phối cảnh/tỉ lệ/hướng sáng, có bóng đổ nhẹ; nhắc lại Character Lock (Phần A charStyle, KHÔNG dán "Default pose" Phần B); tư thế + biểu cảm + vị trí đứng riêng từng scene theo nội dung.
+4. **Nội dung ảnh (`Photo content:`)**: mô tả ảnh thật cần có ở scene đó (khớp ảnh người dùng đã tìm) + chỗ Gấu đứng.
+5. Kết: `no extra text, no captions, no watermark, no additional characters, 16:9.`
+
+**Bài học Gấu bị gen "thành con khác" (Tập 10, scene ảnh đông người):** câu "biểu cảm cảnh đè lên biểu cảm mặc định" + biểu cảm vui phóng đại + ảnh nhiều người dễ làm tool vẽ lại cả mặt/dáng Gấu. Khi gặp: (a) đặt Gấu ở khoảng trống rõ ràng, thấy trọn người, nét viền tách khỏi đám đông; (b) biểu cảm chỉ đổi tư thế/miệng, **mắt vẫn híp hình trăng lưỡi liềm**; (c) thêm câu khoá: "Gau MUST look exactly like the character in the reference image gau: same fur color, face, navy vest, bow tie, gold glasses, white gloves; do not redesign him, do not turn him into a human". Nếu 1 dòng đã sai, sửa riêng dòng đó rồi gen lại; nếu đúng thì thêm câu khoá vào mọi dòng.
+
+## Bước 4 — Xuất các file prompt: `prompt-anh.txt`, `prompt-icon.txt` và `prompt-anh-that.txt`
 Tách theo cột "Loại ảnh" của `scene-list.md`. **Mỗi file chỉ chứa các dòng của đúng loại của nó, theo đúng thứ tự STT tăng dần, KHÔNG có dòng trống chèn cho scene loại khác** (đổi so với trước: không còn giữ dòng rỗng cho scene crop — tool gen ảnh vốn bỏ qua dòng trống và đánh số theo dòng có prompt; việc ánh xạ dòng ↔ STT thật do C4 làm theo `scene-list.md`):
 - **`prompt-anh.txt`** — hoạt cảnh minh hoạ: mỗi dòng = 1 prompt hoàn chỉnh của 1 scene `AI gen`, nằm gọn trên 1 dòng, đúng thứ tự STT. Không có số thứ tự/tiêu đề đầu dòng.
 - **`prompt-icon.txt`** — mỗi dòng = 1 prompt icon của 1 scene `Icon động` theo Bước 3b, đúng thứ tự STT.
+- **`prompt-anh-that.txt`** — mỗi dòng = 1 prompt của 1 scene `Ảnh thật` theo Bước 3c, đúng thứ tự STT; chỉ tạo nếu tập có scene `Ảnh thật`.
 - Scene `Crop nguồn thật` không có dòng ở file nào (thông tin nằm ở `crop-nguon.md`, Bước 3).
-- Xuất kèm file **`anh-xa-prompt.md`** (cùng thư mục tập): mỗi file prompt có bao nhiêu dòng và bảng dòng N ↔ STT scene (để C4 và người dùng đối chiếu); khi báo người dùng cũng nêu ngắn gọn số dòng từng file. Nếu tập không có scene `Icon động` thì không tạo `prompt-icon.txt`.
+- Xuất kèm file **`anh-xa-prompt.md`** (cùng thư mục tập): mỗi file prompt có bao nhiêu dòng và bảng dòng N ↔ STT scene (để C4 và người dùng đối chiếu); khi báo người dùng cũng nêu ngắn gọn số dòng từng file. Nếu tập không có scene `Icon động` thì không tạo `prompt-icon.txt`. Tương tự không có `Ảnh thật` thì không tạo `prompt-anh-that.txt` và thư mục `Anh Tham Chieu/`.
 
 **Vị trí lưu file**: cả 2 file ở gốc `Bai-Dang/Tap N - [tên]/` — KHÔNG để trong `Anh Video/`.
 
@@ -140,6 +157,7 @@ Ngay sau khi xuất, **tạo sẵn thư mục rỗng**: `Anh Video/` (ảnh ho�
 |---|---|---|
 | `prompt-anh.txt` | Hoạt cảnh có Gấu (`AI gen`) | `Anh Video/` |
 | `prompt-icon.txt` | Icon minh hoạ nền trắng (`Icon động`) | `Icon Goc/` |
+| `prompt-anh-that.txt` | Ảnh thật đã phục hồi + ghép Gấu (`Ảnh thật`), nạp ảnh từ `Anh Tham Chieu/` | `Anh Video/` (tên file gen chứa từ khoá `sNNN`) |
 - Dán **từng dòng** vào tool gen, mỗi dòng là 1 prompt hoàn chỉnh (không tách/cắt); **giữ nguyên thứ tự dòng** — ảnh thứ N ứng với dòng N, C4 dựa vào `anh-xa-prompt.md` (bảng dòng ↔ STT) để đổi tên.
 - Prompt icon phải ra **nền trắng tinh** (điều kiện để tách nền); nếu tool ra nền khác thì báo lại để sửa prompt.
 - Nên **gen thử 6-8 dòng trải đều mỗi file, kiểm chất lượng (nhất là chữ tiếng Việt, số tiền) rồi mới gen phần còn lại**; dòng nào lỗi thì viết lại prompt và gen lại riêng dòng đó.

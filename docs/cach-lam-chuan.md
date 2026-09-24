@@ -26,7 +26,7 @@ Một kênh chỉ xoay quanh 3 yếu tố quyết định lượt ưu tiên hi�
 
 ## 4. Checklist Script
 - Sau khi viết xong `voice-script.md`, Claude phải tự rà lại dấu hiệu "nghe AI quá" trước khi đưa người dùng đọc — xem checklist chi tiết ở `QuyTrinh/C1-Script.md` Bước 3.5 (câu lệch nhịp, không liệt kê đối xứng, tránh cụm sáo rỗng ở `docs/DNA.md` mục 7).
-- Hook phải rơi vào ~15 giây đầu, disclaimer bắt buộc theo ngay sau (khung ở `docs/DNA.md` mục 3).
+- Hook phải rơi vào 30 giây đầu (cấu trúc 3 pha, ghi cứng — xem `docs/DNA.md` mục 3 và `QuyTrinh/C1-Script.md` Bước 1.5 mục 1), disclaimer bắt buộc theo ngay sau.
 - Cắt bỏ mọi chi tiết không phục vụ trực tiếp mạch bóc tách chi phí hoặc câu hỏi người xem đang tò mò.
 - Áp dụng framework **Nghiên cứu → Học cấu trúc → Remix**: khảo sát cách kể/nhịp hook của các kênh phân tích tài chính đang hút khán giả, remix theo công thức riêng của Gấu Tinh Ranh — không tự phát minh lại nhịp kể từ đầu, nhưng không sao chép nội dung/số liệu của họ.
 

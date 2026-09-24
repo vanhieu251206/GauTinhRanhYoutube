@@ -9,12 +9,13 @@
 
 ## Đầu ra
 Thư mục `Anh Video/` chứa **đúng 1 file cho mỗi STT scene, gộp mọi loại vào 1 bộ duy nhất** — đây là bộ ảnh cuối cho C5:
-- Scene `AI gen` và `Crop nguồn thật`: `001.jpg`, `002.jpg`... (3 chữ số vì 1 tập có thể >99 ảnh).
+- Scene `AI gen`, `Crop nguồn thật` và `Ảnh thật`: `001.jpg`, `002.jpg`... (3 chữ số vì 1 tập có thể >99 ảnh).
 - Scene `Icon động`: `007.png`... (PNG nền trong suốt sau khi tách nền; đuôi `.png` là dấu phân biệt loại ở C5).
 Ảnh icon gốc nền trắng giữ nguyên trong `Icon Goc/` (đổi tên `NNN.jpg` theo STT), không xoá.
 
 ## Bước 1 — Đổi tên theo STT (làm riêng từng loại)
 Mỗi file prompt chỉ chứa các dòng của đúng 1 loại theo thứ tự STT (C3 Bước 4, không dòng trống). Cách ánh xạ: từ `scene-list.md`, lọc danh sách STT của loại đó theo thứ tự tăng dần → **ảnh thứ N (theo thứ tự sinh ra = thứ tự dòng trong file prompt) ↔ STT thứ N trong danh sách đã lọc**.
+- **Ảnh thật**: tên file gen chứa từ khoá `sNNN` của scene (dòng prompt trong `prompt-anh-that.txt` bắt đầu bằng "Use the reference photo sNNN") → lấy `NNN` từ chính tên file, đổi thẳng `NNN.jpg` vào `Anh Video/`, không qua ánh xạ thứ tự. Kiểm tra: số ảnh = số scene `Ảnh thật`, mỗi từ khoá đúng 1 ảnh (Tập 10: 12/12). Ảnh gốc người dùng tự tìm giữ nguyên trong `Anh Tham Chieu/`, không xoá.
 - Hoạt cảnh: lọc STT `AI gen`, ánh xạ với `prompt-anh.txt`. Ảnh `Crop nguồn thật` người dùng đặt theo đúng STT trong `crop-nguon.md` — đổi tên thẳng `0NN.jpg`, không qua ánh xạ.
 - Icon: lọc STT `Icon động`, ánh xạ với `prompt-icon.txt`, đổi tên `Icon Goc/NNN.jpg`.
 - **Tuyệt đối không mặc định "số trong tên file gen = STT scene"** (lỗi thật ở Tập 8): tool gen thường đánh số theo thứ tự dòng CÓ prompt. Luôn ánh xạ qua danh sách STT đã lọc từ `scene-list.md`. Kiểm tra: số ảnh mỗi loại phải bằng số scene loại đó, lệch thì dừng báo người dùng.

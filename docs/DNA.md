@@ -17,17 +17,17 @@ Gấu từng là "tay chơi" quan sát đủ loại mô hình kiếm tiền ngo�
 
 **Ngoại hình:** gấu nâu, dáng tròn/mềm kiểu mascot-comic, đầu to hơn thân ~40-45% (cập nhật — trước đây cao gầy ~30%), mắt híp bán nguyệt (tinh ranh, KHÔNG đổi sang mắt to tròn), nhếch mép cười khẩy lộ răng vàng, tay đeo găng trắng kiểu cartoon cổ điển (cập nhật), vest xanh navy (#0C447C) + nơ bướm + kính lão gọng tròn vàng đồng (#BA7517) — chi tiết nhận diện riêng, cho phép biểu cảm phóng đại mạnh hơn trước. Chi tiết đầy đủ ở `docs/Visual-Prompts-goc.md`.
 
-## 3. Cấu trúc video (khung lõi MẶC ĐỊNH — bắt buộc theo thứ tự, trừ khi người dùng chọn khung tự do, xem quy tắc cứng bên dưới)
-1. **Hook mở đầu** (0-15s) — nêu nghịch lý/câu hỏi cụ thể kèm số liệu (VD "Ly trà sữa 25.000đ, tưởng lãi đậm lắm chứ gì?").
+## 3. Cấu trúc video (khung tự do là MẶC ĐỊNH từ 23/09/2026 — xem quy tắc cứng bên dưới; khung 6 bước liệt kê dưới đây là khung dự phòng, dùng khi chủ đề hợp cấu trúc tuyến tính rõ ràng hơn là mạch chuyện)
+1. **Hook mở đầu** (0-30s, cấu trúc 3 pha — xem `QuyTrinh/C1-Script.md` Bước 1.5 mục 1) — nêu nghịch lý/câu hỏi cụ thể kèm số liệu (VD "Ly trà sữa 25.000đ, tưởng lãi đậm lắm chứ gì?").
 2. **Disclaimer ngắn cố định** (đặt ngay sau hook, nguyên văn mục 5).
 3. **Bối cảnh ngành/hiện tượng** — giới thiệu mô hình đang phân tích.
 4. **Bóc tách COGS + chi phí cố định** — giải thích ngay mọi thuật ngữ tài chính vừa nhắc.
-5. **Điểm hoà vốn + chi phí ẩn/cơ hội** — dùng câu nối chuyển cảnh cố định: "Giờ mới đến khúc xương khó nhằn đây..."
+5. **Điểm hoà vốn + chi phí ẩn/cơ hội** — chuyển cảnh bằng câu tự viết phù hợp mạch tập (không còn bắt buộc nguyên văn, xem mục 5).
 6. **Kết luận bài học tài chính + catchphrase kết** (nguyên văn mục 5).
 
-Thứ tự 6 bước lõi này là khung MẶC ĐỊNH và không đổi giữa các tập, trừ khi người dùng chọn khung tự do theo quy tắc cứng ngay dưới đây. Nhưng **cách triển khai bên trong mỗi bước phải đa dạng theo từng tập** — xem "Kỹ thuật kể chuyện bổ trợ" ở `QuyTrinh/C1-Script.md` Bước 1.5 (giai thoại mở bài, số liệu theo mốc năm, thống kê gây sốc, case study thật ẩn danh, mid-roll CTA, mở rộng rủi ro/xu hướng...). Đây là 1 **kho công cụ chọn linh hoạt**, KHÔNG phải công thức cố định phải nhét đủ vào mọi tập theo đúng 1 vị trí/tần suất — nếu tập nào cũng dùng y hệt combo kỹ thuật ở y hệt chỗ thì các tập sẽ nghe "rập khuôn" dù chủ đề khác nhau.
+**Cách triển khai bên trong mỗi phần phải đa dạng theo từng tập** — xem "Kỹ thuật kể chuyện bổ trợ" ở `QuyTrinh/C1-Script.md` Bước 1.5 (giai thoại mở bài, số liệu theo mốc năm, thống kê gây sốc, case study thật ẩn danh, mid-roll CTA, mở rộng rủi ro/xu hướng...). Đây là 1 **kho công cụ chọn linh hoạt**, KHÔNG phải công thức cố định phải nhét đủ vào mọi tập theo đúng 1 vị trí/tần suất — nếu tập nào cũng dùng y hệt combo kỹ thuật ở y hệt chỗ thì các tập sẽ nghe "rập khuôn" dù chủ đề khác nhau.
 
-**Quy tắc cứng — khung tự do (người dùng chốt 21/09/2026, đã áp dụng thực tế ở Tập 3, 4, 7, 9):** ngoài khung 6 bước mặc định, người dùng được chọn **khung tự do**, sắp xếp mạch kể theo hành trình câu hỏi của khán giả (không bắt buộc có khối "bối cảnh ngành" đứng riêng, số liệu vào đúng chỗ nó gây bất ngờ). Khi dùng khung tự do **vẫn BẮT BUỘC giữ**: (a) hook 3 pha trong 30 giây đầu; (b) disclaimer ngay sau hook; (c) câu nối cố định "Giờ mới đến khúc xương khó nhằn đây..." đặt ngay trước phần điểm hoà vốn/chi phí ẩn; (d) giải thích ngay mọi thuật ngữ tài chính; (e) catchphrase kết. **Claude KHÔNG tự chọn khung tự do** — phải hỏi người dùng chọn khung mặc định hay khung tự do ở bước "Chọn hướng triển khai" (`QuyTrinh/C1-Script.md` Bước 1.5), sau khi đã có số liệu.
+**Quy tắc cứng — khung tự do MẶC ĐỊNH (người dùng chốt 23/09/2026, đã áp dụng thực tế ở Tập 3, 4, 7, 9, 10):** mặc định triển khai theo **khung tự do**, sắp xếp mạch kể theo hành trình câu chuyện/câu hỏi của khán giả (không bắt buộc có khối "bối cảnh ngành" đứng riêng, số liệu vào đúng chỗ nó gây bất ngờ) — **Claude không cần hỏi lại mỗi lần**, cứ mặc định dùng khung tự do. Khi dùng khung tự do **vẫn BẮT BUỘC giữ**: (a) hook 3 pha trong 30 giây đầu; (b) disclaimer ngay sau hook; (c) chuyển cảnh rõ ràng sang phần điểm hoà vốn/chi phí ẩn (câu tự viết phù hợp mạch tập, không còn bắt buộc nguyên văn cố định — xem mục 5); (d) giải thích ngay mọi thuật ngữ tài chính; (e) catchphrase kết. Chỉ quay lại khung 6 bước cố định ở trên khi người dùng chủ động yêu cầu, hoặc khi Claude thấy chủ đề thật sự khó dựng theo mạch chuyện tự do thì hỏi lại người dùng trước khi đổi.
 
 Thời lượng: tối thiểu **8 phút 30 giây** (nâng từ mốc 8 phút cũ — chừa biên an toàn vì tốc độ đọc thật của giọng AI có thể nhanh hơn mốc trung bình đã đo), không giới hạn trần trên — dài bao nhiêu tuỳ nội dung/số liệu có đủ chiều sâu để giữ chân người xem, không ép cắt ngắn cho vừa 1 khung cứng. **Khi ước lượng thời lượng ở C1 Bước 5/C2, phải đếm ký tự Unicode thật của `voice-script.md` (VD dùng `len()` trong Python hoặc công cụ đếm ký tự thật) — TUYỆT ĐỐI KHÔNG dùng lệnh đếm byte/dung lượng file (VD `wc -c` trong bash) làm số ký tự, vì tiếng Việt có dấu chiếm 2-3 byte/ký tự trong UTF-8, dùng nhầm sẽ ước tính thời lượng cao hơn thực tế rất nhiều** (lỗi thật đã xảy ra: ước tính 8,7 phút bằng đếm byte, đếm lại đúng ký tự chỉ ra 6,8 phút). Tần suất 2 video/tuần (điều chỉnh theo năng lực sản xuất thực tế). *Tốc độ đọc TTS đo từ Tập 8 (số đo, cập nhật khi đo lại): khoảng 17,5 ký tự/giây tính cả khoảng trắng (Tập 8: 9.375 ký tự ↔ 8 phút 56 giây), nên mốc 8 phút 30 giây ≈ 8.900 ký tự.*
 
@@ -49,8 +49,12 @@ Thời lượng: tối thiểu **8 phút 30 giây** (nâng từ mốc 8 phút c�
 Mẫu gốc tham khảo (KHÔNG bắt buộc dùng nguyên văn nữa, chỉ để định hướng tông giọng):
 > "Thông tin dưới đây là tôi tổng hợp, góp nhặt từ nhiều nguồn, cũng là ý kiến cá nhân chứ không phải tư vấn đầu tư chính thức. Sai chỗ nào anh em cứ chửi thẳng ở comment cho tôi biết."
 
-**Câu nối chuyển cảnh** (trước phần điểm hoà vốn/chi phí ẩn):
+**Ưu tiên viết ngắn gọn (người dùng chốt 23/09/2026):** disclaimer không cần đủ 3-4 câu như mẫu gốc — 2-3 câu ngắn là đủ, miễn giữ đủ 2 ý bắt buộc ở trên. Tránh dài dòng lặp ý.
+
+**Câu nối chuyển cảnh** (trước phần điểm hoà vốn/chi phí ẩn) — KHÔNG còn bắt buộc nguyên văn (bỏ 23/09/2026 theo yêu cầu người dùng: ép dùng đúng câu này nhiều tập liền đôi khi không hợp mạch/ảnh hưởng dòng chảy câu chuyện). Mẫu gốc tham khảo, chỉ dùng khi hợp:
 > "Giờ mới đến khúc xương khó nhằn đây..."
+
+Mỗi tập tự viết câu chuyển cảnh phù hợp mạch chuyện riêng (hoặc chuyển ý tự nhiên không cần câu tín hiệu cố định) — miễn là người xem vẫn cảm nhận rõ đang bước sang phần "khó nhằn hơn" (điểm hoà vốn/chi phí ẩn).
 
 **Catchphrase kết** (mọi tập, đổi 21/09/2026 theo người dùng — bỏ chữ "ngu" vì không chê khán giả):
 > "Tôi là Gấu. Tính kỹ thì giữ được tiền. Hẹn gặp anh em ở tập sau."

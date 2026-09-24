@@ -35,7 +35,7 @@
 5. Ví von khái niệm tài chính khô khan bằng hình ảnh đời thường
 6. Kết mỗi luận điểm bằng một câu chốt ngắn, dễ nhớ
 7. Giữ giọng mỉa mai nhẹ khi nói về "ảo tưởng làm giàu"
-8. Có thể mở hook bằng 1 giai thoại/tình huống cá nhân ngắn (VD "Tôi có ông anh họ...") để dẫn vào nghịch lý, miễn là vẫn chạm số liệu/nghịch lý chính trong 15 giây đầu
+8. Có thể mở hook bằng 1 giai thoại/tình huống cá nhân ngắn (VD "Tôi có ông anh họ...") để dẫn vào nghịch lý, miễn là vẫn chạm số liệu/nghịch lý chính trong 30 giây đầu (cấu trúc 3 pha, xem `docs/DNA.md` mục 3)
 9. Với video dài/nhiều lớp phân tích, có thể chèn 1 câu mời thích + đăng ký ngắn gọn ở khoảng giữa video (mid-roll CTA), không chỉ ở cuối
 
 **DON'T:**

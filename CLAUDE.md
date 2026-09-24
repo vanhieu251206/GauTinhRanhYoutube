@@ -28,10 +28,12 @@ GauTinhRanh/
 │       ├── sub.srt              # tải kèm voice.mp3 từ TTS (chữ khớp voice-script) — dùng định vị câu ở C5
 │       ├── sub-capcut.srt       # CapCut tự tạo từ voice.mp3 (chữ có thể sai) — chỉ dùng đối chứng mốc TTS ở C5
 │       ├── sub-final.srt        # phụ đề mới gộp sub + sub-capcut, chia vừa 1 dòng CapCut, không ngắt ý (C6)
+│       ├── Anh Tham Chieu/       # (tuỳ tập) ảnh thật người dùng tự tìm đặt tên sNNN (NNN = STT scene) + gau.png để ghép Gấu (C3 Bước 3c)
 │       ├── Anh Tham Chieu Nhan Vat/  # (tuỳ tập) ảnh + prompt tạo hình nhân vật phụ nhắc >2 lần (C1.5)
 │       │   └── prompt-tham-chieu.txt # mỗi dòng 1 prompt gen nhân vật (gồm cả Gấu), ảnh gen xong đặt tên theo nhân vật (VD gau.jpg, long.jpg)
-│       ├── scene-list.md        # danh sách scene, có cột "Loại ảnh": AI gen / Crop nguồn thật / Icon động (C2)
+│       ├── scene-list.md        # danh sách scene, có cột "Loại ảnh": AI gen / Crop nguồn thật / Icon động / Ảnh thật (C2)
 │       ├── prompt-anh.txt       # 1 dòng = 1 prompt hoạt cảnh/scene AI gen, KHÔNG dòng trống cho scene loại khác (C3 Bước 4)
+│       ├── prompt-anh-that.txt  # (tuỳ tập) 1 dòng = 1 prompt scene "Ảnh thật": phục hồi, làm nét, 16:9, ẩn danh mặt/logo/số điện thoại + ghép Gấu (C3 Bước 3c)
 │       ├── crop-nguon.md       # hướng dẫn crop ảnh nguồn thật (STT/link/trích dẫn/ghi chú khung) cho scene Crop nguồn thật (C3 Bước 3)
 │       ├── doi-thu/              # (tuỳ chọn) người dùng tự để script/link đối thủ vào đây trước C1, tham khảo góc hay, KHÔNG copy nguyên văn
 │       ├── Anh Video/            # bộ ảnh cuối, mỗi STT 1 file: 001.jpg... (AI gen, crop nguồn thật) + NNN.png nền trong suốt (Icon động)
@@ -40,8 +42,10 @@ GauTinhRanh/
 │       ├── timing.md            # mốc thời gian mỗi scene (C5)
 │       ├── clips/                # clip câm scene-001.mp4...scene-0NN.mp4 (ffmpeg, C5); scene Icon động là .mp4 ghép nền kẻ ô (icon_anim.py, C5 Bước 2b)
 │       ├── clip-hoan-chinh.mp4  # ghép trong CapCut (voice + clips + nhạc/hiệu ứng/sub/logo)
-│       ├── thumbnail-prompt.txt # prompt gen ảnh nền thumbnail đã chốt, KHÔNG chữ (C7 Bước 3)
-│       ├── thumbnail-nen.jpg    # ảnh nền do AI tạo, không chữ (C7 Bước 6)
+│       ├── thumbnail-prompt.txt # prompt thumbnail đã chốt, KHÔNG chữ — Cách A mỗi lớp 1 dòng (Gấu, hoạt động), Cách B 1 dòng (C7 Bước 3A/3B)
+│       ├── thumb-gau.jpg/.png   # (Cách A) lớp Gấu nền trắng + bản tách nền (C7 Bước 3.5)
+│       ├── thumb-hoat-dong.jpg/.png # (Cách A) lớp hoạt động chính nền trắng + bản tách nền
+│       ├── thumbnail-nen.jpg    # (Cách B) ảnh nền 1 cảnh do AI tạo, không chữ (C7 Bước 6)
 │       ├── thumb-NN.jpg         # (tuỳ) bản làm việc có chữ, kích thước lớn — trước khi xuất bản cuối
 │       ├── thumbnail.jpg        # ảnh bìa cuối, 1280×720px <2MB, sau khi chèn chữ thủ công (C7 Bước 6)
 │       └── tieu-de-mo-ta.txt    # tiêu đề + mô tả + timestamp + hashtag + tag (C8)
